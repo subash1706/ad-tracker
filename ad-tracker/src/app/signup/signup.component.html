@@ -1,0 +1,54 @@
+<body>
+    <div class="center">
+        <h1 class="section1" style="color: rgb(90, 90, 248);">Sign Up</h1>
+        <form class="section1" [formGroup]="signup" (ngSubmit)="signupdata(this.signup.value)">
+            <div class="text_field">
+                <input for="fname" class="form-control" formControlName="fname" type="text" placeholder="First Name"/> 
+                <span class="text-danger" *ngIf="signup.controls['fname'].touched && signup.hasError('required','fname')">
+                    *First Name is required!!
+                </span>   
+            </div>
+            <div class="text_field">
+                <input for="lname" class="form-control" formControlName="lname" type="text" placeholder="Last Name"/> 
+                <span class="text-danger" *ngIf="signup.controls['lname'].touched && signup.hasError('required','lname')">
+                    *Last Name is required!!
+                </span>   
+            </div>
+            <div class="text_field">
+                <input for="email" class="form-control" formControlName="email" type="text" placeholder="Email"/>
+                <span class="text-danger" *ngIf="signup.controls['email'].touched && signup.hasError('required','email')">
+                    *Email is required!!!!
+                </span>    
+            </div>             
+            <div class="text_field">
+                <input for="password" class="form-control" formControlName="password" type="text" placeholder="password"/>
+                <span class="text-danger" *ngIf="signup.controls['password'].touched && signup.hasError('required','password')">
+                    *Password is required!!!!
+                </span>    
+            </div>                 
+            <div class="text_field">
+                <input for="confirm_password" class="form-control" formControlName="confirm_password" type="text" placeholder="confirm_password"/>
+                <span class="text-danger" *ngIf="signup.controls['confirm_password'].touched && signup.hasError('required','confirm_password')">
+                    *password is required!!!!
+                </span>    
+            </div>    
+            <div class="text_field">
+                <input for="contact_number" class="form-control" formControlName="contact_number" type="text" placeholder="Contact Number"/>
+                <span class="text-danger" *ngIf="signup.controls['contact_number'].touched && signup.hasError('required','contact_number')">
+                    *Contact Number is required!!!!
+                </span>    
+            </div><br>
+            <!-- <div class="text_field">
+                <input for="password" class="form-control" formControlName="email" type="text" placeholder="Email"/>
+                <span class="text-danger" *ngIf="signup.controls['email'].touched && signup.hasError('required','email')">
+                    *Email is required!!!!
+                </span>    
+            </div>    -->
+            <div>
+                <button class="button" type="submit"   value="Send Message">submit</button>
+            </div> 
+                
+        </form>
+    </div>
+</body>
+
