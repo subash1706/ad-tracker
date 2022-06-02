@@ -1,0 +1,94 @@
+<body>
+    <!-- <div id="contact">
+        <div class="contact container">
+          <div>
+            <h1 class="section-title"> <span>Add Content</span></h1>
+          </div>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-info">
+                <form class="section1" [formGroup]="AddGroup"  >
+                    <div class="text_field">
+                        <input for="Topic" class="form-control" formControlName="Topic" type="text" placeholder="Topic"/> 
+                        <span class="text-white" *ngIf="AddGroup.controls['Topic'].touched && AddGroup.hasError('required','Topic')">
+                            *Topic is required!!
+                        </span>   
+                    </div>
+                    <div>
+                        <textarea for="message" class="form-control" formControlName="message"  class="text-box" rows="8" name="Message" placeholder="Enter the content here"></textarea>
+                    </div><br><br>  
+                    <div>
+                        <button class="button" type="submit"  (click)="addcontent(this.AddGroup.value)">Add content</button>
+                    </div> 
+                        
+                </form>
+              </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="page">
+      <aside class="menu">
+        <a href="" class="logo"></a>
+        <a href="/dashboard" class="menu-item">
+          <p class="text">Dashboard</p>
+        </a>
+        <a routerLink="/add" class="menu-item">
+          <p class="text">Add content</p>    
+        </a>
+        <a routerLink="/delete" class="menu-item">
+          <p class="text">Delete Content</p>    
+        </a>
+        <a href="" class="menu-item">
+          <p class="text">Log Out</p>    
+        </a>
+      </aside>
+      <section class="main">
+        <h2>ADD-CONTENT</h2>
+        <ul >
+          <li>
+            <div><h1>Topic</h1></div>
+            <div><h1>Message</h1></div>
+            <div><h1>Options</h1></div>
+          </li>
+          <li >
+            <div>
+              <input for="Topic" class="form-control" formControlName="Topic" type="text" placeholder="Topic"/> 
+                        <span class="text-white" *ngIf="AddGroup.controls['Topic'].touched && AddGroup.hasError('required','Topic')">
+                            *Topic is required!!
+                        </span>
+            </div>
+            <div>
+              <textarea for="message" class="form-control" formControlName="message"  class="text-box" name="Message" placeholder="Enter the content here"></textarea>
+            </div> 
+            <div>
+              <button class="button" type="submit"  (click)="addcontent(this.AddGroup.value)">Add content</button>
+          </div>            
+          </li>
+         </ul>
+      </section>
+    </div>
+    <!-- <footer id="footer">
+        <div class="footer container">
+          <div class="brand">
+            <h1><span>E</span>asily<span> T</span>rack<span> S</span>ales<span> &</span><span> L</span>eads</h1>
+          </div>
+          <div class="social-icon">
+            <div class="social-item">
+              <a href="#"><img src="https://img.icons8.com/nolan/64/facebook-new.png" alt="Facebook" /></a>
+            </div>
+            <div class="social-item">
+              <a href="#"><img src="https://img.icons8.com/nolan/64/instagram-new.png" alt="Instagram" /></a>
+            </div>
+            <div class="social-item">
+              <a href="#"><img src="https://img.icons8.com/nolan/64/twitter-squared.png" alt="Twitter"/></a>
+            </div>
+            <div class="social-item">
+              <a href="#"><img src="https://img.icons8.com/nolan/64/linkedin.png" alt="linkedin"/></a>
+            </div>
+          </div>
+          <p style="margin-left: 70px;">Copyright © 2022. All rights reserved</p>
+        </div>
+    </footer>
+     -->
+    
+    

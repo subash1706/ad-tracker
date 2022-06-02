@@ -1,0 +1,51 @@
+.bag{
+    background-color: rgb(23, 23, 65);
+  }
+  #footer {
+    background-image: linear-gradient(60deg, #0b0b0c 100%, #485563 0%);
+  }
+  #footer .footer {
+    min-height: 200px;
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
+  #footer h2 {
+    color: white;
+    font-weight: 500;
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  #footer .social-icon {
+    display: flex;
+    margin-bottom: 30px;
+  }
+  #footer .social-item {
+    height: 50px;
+    width: 50px;
+    margin: 0 5px;
+  }
+  #footer .social-item img {
+    filter: grayscale(1);
+    transition: 0.3s ease filter;
+  }
+  #footer .social-item:hover img {
+    filter: grayscale(0);
+  }
+  #footer p {
+    color: white;
+    font-size: 1.3rem;
+  }
+  .social-icon .social-item img{
+    margin-top: 10px;
+    height: 100%;
+    width: 100%;
+    margin-left: 70px;
+  }
+  .brand h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: white;
+
+  }

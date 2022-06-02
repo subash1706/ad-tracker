@@ -35,8 +35,8 @@ export class SignupComponent implements OnInit {
   }
 
 signupdata(FormValue:NgForm){
-  this.api.postdata(FormValue).subscribe((data)=>{
-    alert("Data was posted successfully");
+  this.api.signupdata(FormValue).subscribe((data)=>{
+    alert("Signed Up successfully");
     this.signup.reset();
   },rej=>{
     console.log("Error" + rej);

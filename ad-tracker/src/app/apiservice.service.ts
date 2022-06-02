@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,8 +7,26 @@ import { HttpClient } from '@angular/common/http';
 export class ApiserviceService {
 
   constructor(private http: HttpClient) { }
-  postdata(formObject:any){
-    return this.http.post('http://localhost:8080/post_query',formObject)
+  signupdata(formObject:any){
+    return this.http.post('http://localhost:8080/post_query',formObject);
   }
+  
+  loginForm(){
+    return this.http.get('http://localhost:8080/loginForm');
+  }
+  addcontentdata(formObject:any){
+    return this.http.post('http://localhost:8080/addcontentdata',formObject);
+  }
+  getUser(){
+    return this.http.get('http://localhost:8080/getcontent');
+  }
+
+
+  deletecontenttopicmessage(id:any,id1:any){
+    return this.http.delete(`http://localhost:8080/deletecontenttopicmessage/${id}/${id1}`);
+
+  }
+
+
 }
 

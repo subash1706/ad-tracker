@@ -22,7 +22,8 @@ app.post("/post_query",(request,response,next) => {
         email: request.body.email,
         password: request.body.password,
         confirm_password: request.body.confirm_password,
-        contact_number: request.body.contact_number
+        contact_number: request.body.contact_number,
+        type:'signupData'
     };
     dbconnection.insert(object).then(
         (res) => {
@@ -34,9 +35,79 @@ app.post("/post_query",(request,response,next) => {
           response.send(rej);
         }
       );
-      //   response.redirect("..");
-      console.log("Data added");
-    });
+    })
+    //--------------add content--------------------//
+    app.post("/addcontentdata",(request,response,next) => {
+      console.log("Hi");
+      console.log(request);
+      var object = {
+        Topic: request.body.Topic,
+        message: request.body.message,
+        type:'addcontentdata'
+      };
+      dbconnection.insert(object).then(
+          (req) => {
+            console.log("content added ");
+            response.send(req);
+
+          },
+          (res) => {
+            console.log("content cannot be added");
+            response.send(res);
+          }
+        )
+      })
+      //------//
+      app.get("/getcontent", (request, response) => {
+        console.log(request);
+        console.log("get called");
+        var data={
+          selector:{
+            type:"addcontentdata",
+          },
+        };
+        // console.log("Fetching Begins");
+        dbconnection.get(data,"ad-tracker").then((res) => {
+          if (res) {
+            console.log("process success")
+            response.send(res);
+            
+          } else {
+            console.log("process failed")
+          }
+        });
+      });
+
+      app.delete("/deletecontenttopicmessage/:id/:id1", (request, response) => {
+        dbconnection
+          .del_id(request.params.id, request.params.id1, "ad-tracker")
+          .then((res) => {
+            if (res) {
+              response.send(res);
+            } else {
+              response.send("error");
+            }
+          });
+      });
+
+      app.get("/loginForm", (request, response) => {
+        console.log(request);
+        console.log("get called");
+        var data={
+          selector:{
+            type:"signupData",
+          },
+        };
+        dbconnection.get(data,"ad-tracker").then((res) => {
+          if (res) {
+            console.log("process success")
+            response.send(res);
+            
+          } else {
+            console.log("process failed")
+          }
+        });
+      });
     
     app.listen(port, (err) => {
       if (err) {
@@ -44,5 +115,7 @@ app.post("/post_query",(request,response,next) => {
       }
     
       console.log(`server is listening on http://localhost:${port}`);
-    });  
+    });
+
+
 

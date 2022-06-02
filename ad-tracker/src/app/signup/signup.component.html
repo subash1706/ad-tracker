@@ -21,13 +21,13 @@
                 </span>    
             </div>             
             <div class="text_field">
-                <input for="password" class="form-control" formControlName="password" type="text" placeholder="password"/>
+                <input for="password" class="form-control" formControlName="password" type="password" placeholder="password"/>
                 <span class="text-danger" *ngIf="signup.controls['password'].touched && signup.hasError('required','password')">
                     *Password is required!!!!
                 </span>    
             </div>                 
             <div class="text_field">
-                <input for="confirm_password" class="form-control" formControlName="confirm_password" type="text" placeholder="confirm_password"/>
+                <input for="confirm_password" class="form-control" formControlName="confirm_password" type="password" placeholder="confirm_password"/>
                 <span class="text-danger" *ngIf="signup.controls['confirm_password'].touched && signup.hasError('required','confirm_password')">
                     *password is required!!!!
                 </span>    
@@ -38,12 +38,6 @@
                     *Contact Number is required!!!!
                 </span>    
             </div><br>
-            <!-- <div class="text_field">
-                <input for="password" class="form-control" formControlName="email" type="text" placeholder="Email"/>
-                <span class="text-danger" *ngIf="signup.controls['email'].touched && signup.hasError('required','email')">
-                    *Email is required!!!!
-                </span>    
-            </div>    -->
             <div>
                 <button class="button" type="submit"   value="Send Message">submit</button>
             </div> 
@@ -51,4 +45,3 @@
         </form>
     </div>
 </body>
-

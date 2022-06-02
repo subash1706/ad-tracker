@@ -5,7 +5,20 @@ var password = "ff4e6d701676a004128c9bdb601b52d2";
 
  var cloudant = Cloudant ({ url: url, username:username, password: password});
 
-module.exports.insert = function(paramsvalue){
+insert = function(paramsvalue){
     console.log(paramsvalue);
     return cloudant.use("ad-tracker").insert(paramsvalue);
 }
+insert = function(paramsvalue1){
+  console.log(paramsvalue1);
+  return cloudant.use("ad-tracker").insert(paramsvalue1);
+}
+get = function (data,dbname) {
+  return cloudant.use(dbname).find(data);
+};
+
+del_id = function (id, id1, dbname) {
+  return cloudant.use(dbname).destroy(id, id1);
+};
+
+  module.exports = {insert, get, del_id };

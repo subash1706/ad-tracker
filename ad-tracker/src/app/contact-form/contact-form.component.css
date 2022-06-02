@@ -3,29 +3,15 @@
     padding: 0;
     font-family: sans-serif;
   }
-  .center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    height: 400px;
-    background: transparent;
-    border-radius: 20px;
-  }
-  .center h1 {
-    text-align: center;
-    padding: 0 0 20px 0;
-    border-bottom: 1px solid silver;
-  }
-  .center form {
-    padding: 0 40px;
-    box-sizing: border-box;
+  body{
+    background: url(/../assets/6LM.gif) no-repeat ;
+    background-size: cover;
   }
   form .text_field {
     position: relative;
-    border-bottom: 2px solid #adadad;
-    margin: 30px 0;
+    border-bottom: 2px solid #df4e4e;
+    margin: 50px 0;
+    
   }
   .text_field input {
     width: 100%;
@@ -35,6 +21,7 @@
     border: none;
     background: none;
     outline: none;
+    color: #fff9f9;
   }
   .text_field label {
     position: absolute;
@@ -50,11 +37,11 @@
     width: 100%;
     height: 50px;
     border: 50px;
-    background: #2691d9;
+    background: #d4786c;
     border-radius: 1px solid;
     border-radius: 25px;
     font-size: 18px;
-    color: white;
+    /* color: white; */
     font-weight: 700;
     cursor: pointer;
     outline: none;
@@ -65,9 +52,69 @@
   }
   .text-box{
       resize: none;
-      width: 300px;
+      width: 400px;
       background-color: transparent;
       border-radius: 5px;
       font-size: larger;
-      border-color: #adadad;         
+      border-color: #adadad;    
+      color: aliceblue;    
+      font-size: 18px; 
+      padding: 8px;
   }
+  form{
+    background: transparent;
+  }
+  ::placeholder {
+    color: rgb(248, 246, 246);
+    opacity: 1; /* Firefox */
+  }
+  #footer {
+    background-image: linear-gradient(60deg, #0b0b0c 100%, #485563 0%);
+  }
+  #footer .footer {
+    min-height: 200px;
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
+  #footer h2 {
+    color: white;
+    font-weight: 500;
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  #footer .social-icon {
+    display: flex;
+    margin-bottom: 30px;
+  }
+  #footer .social-item {
+    height: 50px;
+    width: 50px;
+    margin: 0 5px;
+  }
+  #footer .social-item img {
+    filter: grayscale(1);
+    transition: 0.3s ease filter;
+  }
+  #footer .social-item:hover img {
+    filter: grayscale(0);
+  }
+  #footer p {
+    color: white;
+    font-size: 1.3rem;
+  }
+  .brand h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: white;
+    margin-left: 465px;
+    margin-right: -400px;
+  }
+  .social-icon .social-item img{
+    margin-top: 10px;
+    height: 100%;
+    width: 100%;
+    margin-left: 485px;
+  }
+  

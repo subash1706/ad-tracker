@@ -7,12 +7,14 @@ import { LoginformComponent } from './loginform/loginform.component';
 import { SignupformComponent } from './signupform/signupform.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
+import { MainmenuComponent } from './mainmenu/mainmenu.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginformComponent,
     SignupformComponent,
-    SignupComponent
+    SignupComponent,
+    MainmenuComponent
   ],
   imports: [
     BrowserModule,

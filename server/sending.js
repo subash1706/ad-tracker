@@ -11,10 +11,10 @@ module.exports.getemail=function(params)
 var composemail = {
     from:'adtracker6@gmail.com',
     to:params,
-    subject:'Track Spot',
-    text:'hi , this message is from Trackspot'
+    subject:`Message`,
+    text:'Got an message from subash'
+    
 }
-
 sender.sendMail(composemail,function(err,res){
     if(err)
     {

@@ -20,6 +20,10 @@ import { PixeltrackingComponent } from './pixeltracking/pixeltracking.component'
 import { PostbacktrackingComponent } from './postbacktracking/postbacktracking.component';
 import { SignupComponent } from './signup/signup.component';
 import{HttpClientModule} from '@angular/common/http';
+import { LoginformComponent } from './loginform/loginform.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AddComponent } from './add/add.component';
+import { DeletecontentComponent } from './deletecontent/deletecontent.component';
 
 
 
@@ -40,7 +44,11 @@ import{HttpClientModule} from '@angular/common/http';
     ConversiontrackingComponent,
     PixeltrackingComponent,
     PostbacktrackingComponent,
-    SignupComponent
+    SignupComponent,
+    LoginformComponent,
+    DashboardComponent,
+    AddComponent,
+    DeletecontentComponent
   ],
   imports: [
     BrowserModule,
