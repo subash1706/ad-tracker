@@ -90,7 +90,6 @@ input {
 .text-box{
     resize: none;
     width: 100%;
-    background-color: transparent;
     border-radius: 5px;
     background-color:  rgb(23, 23, 65);       
     font-size: 18px; 
