@@ -262,7 +262,6 @@ img {
 	top: 0;
 	width: 100vw;
 	height: auto;
-  background-color: transparent;
   min-height: 8vh;
   background-color: rgba(146, 126, 233, 0.24);
   transition: 0.3s ease background-color;
