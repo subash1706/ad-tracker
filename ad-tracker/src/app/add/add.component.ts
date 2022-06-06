@@ -26,7 +26,7 @@ export class AddComponent implements OnInit {
   }
 
   addcontent(FormValue:NgForm){
-    this.api.addcontentdata(FormValue).subscribe((data)=>{
+    this.api.addcontentdata(FormValue).subscribe((_data)=>{
       alert("Content added Successfully");
       this.AddGroup.reset();
     },rej=>{

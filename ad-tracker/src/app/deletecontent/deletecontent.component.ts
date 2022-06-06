@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,FormGroup,NgForm,Validators } from '@angular/forms';
+import { FormBuilder,FormGroup} from '@angular/forms';
 import { ApiserviceService } from '../apiservice.service';
 
 @Component({
@@ -26,8 +26,6 @@ export class DeletecontentComponent implements OnInit {
       this.alldata=this.alldata.docs;
       console.log(this.alldata);
       for(const i of this.alldata){
-          // const elt = this.alldata[i];
-          // console.log(elt)
             this.object.push(i);
             console.log('Fetched successfuly in add component')
       }
@@ -35,7 +33,7 @@ export class DeletecontentComponent implements OnInit {
   }
 
   deletecontent(data:any,data1:any){
-    this.api.deletecontenttopicmessage(data._id,data1._rev).subscribe(res=>{
+    this.api.deletecontenttopicmessage(data._id,data1._rev).subscribe(_res=>{
       location.reload()
     })
   }

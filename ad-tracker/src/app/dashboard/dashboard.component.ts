@@ -38,6 +38,7 @@ export class DashboardComponent implements OnInit {
   }
   deletecontent(data:any,data1:any){
     this.api.deletecontenttopicmessage(data._id,data1._rev).subscribe(res=>{
+      console.log(res);
       location.reload()
     })
   }
@@ -50,7 +51,7 @@ export class DashboardComponent implements OnInit {
 
   update(formvalue:NgForm){
     console.log(formvalue);
-    this.api.updatedata(formvalue).subscribe(res=>{
+    this.api.updatedata(formvalue).subscribe(_res=>{
       console.log("Your data was updated successfully!");
       alert('your data was Updated successfully')
     },rej=>{
