@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,FormGroup,NgForm,Validators } from '@angular/forms';
+import { FormBuilder,FormGroup} from '@angular/forms';
 import { ApiserviceService } from '../apiservice.service';
 @Component({
   selector: 'app-main-menu',
