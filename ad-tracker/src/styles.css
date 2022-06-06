@@ -50,7 +50,6 @@ animation: myfirst 5s linear 2s infinite alternate;
 
 
 .content1 h1,h2{
-  font-family: "Montserrat Medium";
   max-width: 40ch;
   text-align: center;
   transform: scale(0.94);
@@ -651,7 +650,6 @@ p {
   margin-left: 100px;
 	flex-direction: column;
 	max-width: 1200px;
-	margin: 0 auto;
 	width: 90%;
 }
 #contact .contact-items {
@@ -662,7 +660,6 @@ p {
 	padding: 20px;
 	text-align: center;
 	border-radius: 10px;
-	padding: 30px;
 	margin-top: -62px;
 	display: flex;
 	justify-content: center;
