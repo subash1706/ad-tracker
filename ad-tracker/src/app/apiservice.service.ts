@@ -26,7 +26,7 @@ export class ApiserviceService {
   }
   updatedata(doc:any){
     console.log(doc);
-    return this.http.put('http://localhost:8000/update_query/',doc);
+    return this.http.put('http://localhost:8080/update_query/',doc);
   }
 
 

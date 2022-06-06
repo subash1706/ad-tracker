@@ -20,6 +20,8 @@ import { LoginformComponent } from './loginform/loginform.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddComponent } from './add/add.component';
 import { DeletecontentComponent } from './deletecontent/deletecontent.component';
+import { EditComponent } from './edit/edit.component';
+import { Dashboard1Component } from './dashboard1/dashboard1.component';
 
 
 
@@ -40,7 +42,9 @@ import { DeletecontentComponent } from './deletecontent/deletecontent.component'
     LoginformComponent,
     DashboardComponent,
     AddComponent,
-    DeletecontentComponent
+    DeletecontentComponent,
+    EditComponent,
+    Dashboard1Component
   ],
   imports: [
     BrowserModule,

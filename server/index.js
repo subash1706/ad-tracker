@@ -43,6 +43,8 @@ app.post("/post_query",() => {
       var object = {
         Topic: request.body.Topic,
         message: request.body.message,
+        id: request.body.id,
+        rev: request.body.rev,
         type:'addcontentdata'
       };
       dbconnection.insert(object).then(
@@ -138,9 +140,12 @@ app.post("/post_query",() => {
       console.log('hey');
       var object = {
         Topic: request.body.Topic,
-        message: request.body.message
+        message: request.body.message,
+        _id: request.body._id,
+        _rev: request.body._rev
       };
-      dbconnection.update(object, 'ad-tracker').then((res) => {
+  
+      dbconnection.updatedata(object, 'ad-tracker').then((res) => {
         if (res) {
           console.log('updated....');
           response.send(res);

@@ -12,10 +12,51 @@
         <tr *ngFor="let obj of object" style="color: white;" >
             <td><h1>{{obj.Topic}}</h1></td>
             <td><h3>{{obj.message}}</h3></td>
-            <td><button (click)="editcontent(obj)" class="btn btn-primary"><h3>Edit</h3></button></td>
+            <td><button (click)="editcontent(obj._id)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><h3>Edit</h3></button></td>
             <td><button (click)="deletecontent(obj,obj)" class="btn btn-danger"><h3>Delete</h3></button></td>
         </tr>
     </table>
+    <!-- <form>
+      <label for="fname">Topic</label><br>
+      <input type="text" id="fname" name="fname" value="{{topic}}"><br>
+      <label for="lname">Message</label><br>
+      <input type="text" id="lname" name="lname" value="{{message}}"><br><br>
+      <input type="submit" value="Submit">
+    </form>  -->
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div  [formGroup]="EditGroup">
+                <div for="Topic" class="form-control">
+                  <label class="Topic" >Topic</label><br>
+                  <input type="text"  formControlName="Topic" value="{{topic}}"><br>
+                </div>
+                <div for="message" class="form-control" >
+                  <label class="Topic" >Message</label><br>
+                  <textarea rows="8" formControlName="message" class="text-box" type="text" value="{{message}}"></textarea><br><br>
+                </div>
+              </div> 
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary btn-lg" (click)="update(this.EditGroup.value)">Save changes</button>
+              </div>               
+            </form> 
+          </div>
+
+        </div>
+      </div>
+    </div>
+   
 </body>
+
+
 
 

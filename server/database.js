@@ -23,5 +23,9 @@ var edit = function (data,dbname) {
 var del_id = function (id, id1, dbname) {
   return cloudant.use(dbname).destroy(id, id1);
 };
+var updatedata = function(object,dbname){
+  return cloudant.use(dbname).insert(object);
+}
 
-  module.exports = {insert, get, del_id,edit };
+
+  module.exports = {insert, get, del_id,edit,updatedata };

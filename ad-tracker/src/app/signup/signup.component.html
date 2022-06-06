@@ -3,7 +3,7 @@
         <h1 class="section1" style="color: rgb(90, 90, 248);">New Admin</h1>
         <form class="section1" [formGroup]="signup" (ngSubmit)="signupdata(this.signup.value)">
             <div class="text_field">
-                <input for="fname" class="form-control" formControlName="fname" type="text" placeholder="First Name"/> 
+                <input for="fname" class="form-control" formControlName="fname" type="text" placeholder="First Name(user name)"/> 
                 <span class="text-danger" *ngIf="signup.controls['fname'].touched && signup.hasError('required','fname')">
                     *First Name is required!!
                 </span>   

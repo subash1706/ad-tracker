@@ -1,0 +1,193 @@
+<!-- <nav class="navbar navbar-expand-lg bg-dark" id="head">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="">Trackspot</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        row
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <button
+          class="btn btn-outline-success"
+          data-bs-toggle="modal"
+          id="button1"
+          data-bs-target="#addform"
+          type="submit"
+        >
+          Add employee
+        </button>
+       >
+        <input
+          class="input1"
+          type="submit"
+          value="Logout"
+          routerLink="/splasher"
+          routerLinkActive="active"
+        />
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <h1>Newly Added</h1>
+    <table class="table table-hover">
+      <caption></caption>
+      <thead id="head1">
+        <tr>
+          <th scope="col">Topic</th>
+          <th scope="col">Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let obj of object">
+          <th scope="col">{{ obj.Topic }}</th>
+          <th scope="col">{{ obj.message }}</th>
+            <button
+              type="button"
+              class="btn btn-outline-primary me-2"
+              data-bs-toggle="modal"
+              data-bs-target="#onEdit"
+              (click)="onEdit(row)"
+            >
+              Edit
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-danger"
+              data-bs-target="#delete"
+              (click)="delete(row)"
+            >
+              Delete
+            </button>
+        </tr>
+      </tbody>
+    </table>
+    <div></div>
+  
+    <!-- Add Employee -->
+    <!-- <div
+      class="modal fade"
+      id="addform"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add Content</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="addform">
+              <div class="mb-3">
+                  <label for="Topic" class="form-control" formControlName="Topic"></label>
+                <input  type="text" placeholder="Topic"/> 
+                <span class="text-white" *ngIf="AddGroup.controls['Topic'].touched && AddGroup.hasError('required','Topic')">
+                    *Topic is required!!
+                </span>
+              </div>     
+              <div class="mb-3">
+                    <label for="message" class="form-control" formControlName="message" ></label>
+                    <textarea  name="Message" placeholder="Enter the content here"></textarea>
+              </div>            
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  (click)="addEmployee(this.addform.value)"
+                >
+                  Add Employee
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div
+      class="modal fade"
+      id="onEdit"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Edit employee details
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="addform">
+              <div class="mb-3">
+                <label for="id" class="form-label">ID </label>
+                <input
+                  type="number"
+                  class="form-control"
+                  formControlName="id"
+                  id="id"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="Topic" class="form-control" formControlName="Topic"></label>
+              <input  type="text" placeholder="Topic"/> 
+              <span class="text-white" *ngIf="AddGroup.controls['Topic'].touched && AddGroup.hasError('required','Topic')">
+                  *Topic is required!!
+              </span>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-control" formControlName="message" ></label>
+                <textarea  name="Message" placeholder="Enter the content here"></textarea>
+            </div>                
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#update"
+                  (click)="update(this.addform.value)"
+                >
+                  Update
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> --> -->
