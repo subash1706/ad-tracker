@@ -4,14 +4,19 @@
     font-family: sans-serif;
   }
   body{
-    background: url(/../assets/6LM.gif) no-repeat ;
+    background:  linear-gradient( rgba(0, 0, 0, 0.5), rgba(63, 62, 62, 0.5) ), url(../../assets/contact-illustration.gif) no-repeat ;
     background-size: cover;
   }
   form .text_field {
     position: relative;
     border-bottom: 2px solid #df4e4e;
-    margin: 50px 0;
+    margin: 20px 0;
     
+  }
+  caption{
+    font-size: 40px;
+    color: white;
+    margin-top: -80px;
   }
   .text_field input {
     width: 100%;
@@ -57,8 +62,7 @@
       border-radius: 5px;
       font-size: larger;
       border-color: #adadad;    
-      color: aliceblue;    
-      font-size: 18px; 
+      color: aliceblue; 
       padding: 8px;
   }
   form{
@@ -115,6 +119,6 @@
     margin-top: 10px;
     height: 100%;
     width: 100%;
-    margin-left: 485px;
+    margin-left: 550px;
   }
   

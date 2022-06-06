@@ -16,9 +16,12 @@ insert = function(paramsvalue1){
 get = function (data,dbname) {
   return cloudant.use(dbname).find(data);
 };
+edit = function (data,dbname) {
+  return cloudant.use(dbname).get(data);
+};
 
 del_id = function (id, id1, dbname) {
   return cloudant.use(dbname).destroy(id, id1);
 };
 
-  module.exports = {insert, get, del_id };
+  module.exports = {insert, get, del_id,edit };

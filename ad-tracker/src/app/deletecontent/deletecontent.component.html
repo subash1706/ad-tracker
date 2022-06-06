@@ -1,11 +1,16 @@
  <body>
-    <table>
-        <tbody >             
-            <tr *ngFor="let obj of object" style="color: white;" >
-                <td><h1>{{obj.Topic}}</h1></td>
-                <td><h3>{{obj.message}}</h3></td>
-                <td><button (click)="deletecontent(obj,obj)" class="btn btn-danger"><h3>Delete</h3></button></td>
-            </tr>
-        </tbody>
-      </table>
+    <table> 
+        <caption></caption> 
+        <tr>
+            <th>Topic</th>
+            <th>Message</th>
+            <th>Options</th>
+        </tr>
+
+        <tr *ngFor="let obj of object" style="color: white;" >
+            <td><h1>{{obj.Topic}}</h1></td>
+            <td><h3>{{obj.message}}</h3></td>
+            <td><button (click)="deletecontent(obj,obj)" class="btn btn-danger"><h3>Delete</h3></button></td>
+        </tr>
+    </table>
  </body>

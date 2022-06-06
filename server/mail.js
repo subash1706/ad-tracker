@@ -14,11 +14,11 @@ app.use(
   })
 )
 
-app.get('/', function (request, response) {
+app.get('/', function (response) {
   response.json({"name":"subash"});
  });
 
- app.post('/email',(request,response,next)=>{
+ app.post('/email',(request)=>{
   console.log('mmm');
  
   var object ={

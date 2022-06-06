@@ -13,7 +13,7 @@ app.use(
         origin: "http://localhost:4200",
     })   
 );
-app.post("/post_query",(request,response,next) => {
+app.post("/post_query",(request,response) => {
     console.log("Hi");
     console.log(request);
     var object = {
@@ -37,7 +37,7 @@ app.post("/post_query",(request,response,next) => {
       );
     })
     //--------------add content--------------------//
-    app.post("/addcontentdata",(request,response,next) => {
+    app.post("/addcontentdata",(request,response) => {
       console.log("Hi");
       console.log(request);
       var object = {
@@ -57,6 +57,27 @@ app.post("/post_query",(request,response,next) => {
           }
         )
       })
+      app.get("/editcontent/:id",(request,response) => {
+
+        console.log(request.params.id);
+        var object={
+          selector:{
+            id: request.params.id,
+            type:"addcontentdata"
+          }
+          
+        };
+        // dbconnection.get(object,"ad-tracker").then(
+        //   (res) => {
+        //     response.send(res);
+        //   }
+        // )
+        dbconnection.edit(request.params.id,"ad-tracker").then(
+            (res) => {
+              response.send(res);
+            }
+          )
+      });
       //------//
       app.get("/getcontent", (request, response) => {
         console.log(request);
@@ -66,7 +87,6 @@ app.post("/post_query",(request,response,next) => {
             type:"addcontentdata",
           },
         };
-        // console.log("Fetching Begins");
         dbconnection.get(data,"ad-tracker").then((res) => {
           if (res) {
             console.log("process success")
@@ -77,10 +97,18 @@ app.post("/post_query",(request,response,next) => {
           }
         });
       });
+      //------//
+      app.get("/getbyId",(request,response) =>{
+        console.log(request);
+        var _databyid={
+          selector:{
+            id:`${_id}`
+          }
+        }
+      })
 
       app.delete("/deletecontenttopicmessage/:id/:id1", (request, response) => {
-        dbconnection
-          .del_id(request.params.id, request.params.id1, "ad-tracker")
+        dbconnection.del_id(request.params.id, request.params.id1, "ad-tracker")
           .then((res) => {
             if (res) {
               response.send(res);
@@ -108,6 +136,25 @@ app.post("/post_query",(request,response,next) => {
           }
         });
       });
+
+    //----//
+
+    app.put('/update_query', (request, response) => {
+      console.log('hey');
+      var object = {
+        Topic: request.body.Topic,
+        message: request.body.message
+      };
+      dbconnection.update(object, 'ad-tracker').then((res) => {
+        if (res) {
+          console.log('updated....');
+          response.send(res);
+        } else {
+          console.log('can not updated....');
+          response.send('error');
+        }
+      });
+    }); 
     
     app.listen(port, (err) => {
       if (err) {

@@ -28,7 +28,7 @@ export class ContactFormComponent implements OnInit {
   sendmail(Formvalue:NgForm){
     console.log("Hello");
     console.log(Formvalue);
-    this.api.sendmail(Formvalue).subscribe((data:any)=>{
+    this.api.sendmail(Formvalue).subscribe((_data:any)=>{
       console.log(Formvalue);
     })
     }

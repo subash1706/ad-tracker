@@ -20,6 +20,14 @@ export class ApiserviceService {
   getUser(){
     return this.http.get('http://localhost:8080/getcontent');
   }
+  editcontent(id2:any){
+    console.log("hello",id2)
+    return this.http.get(`http://localhost:8080/editcontent/${id2}`);
+  }
+  updatedata(doc:any){
+    console.log(doc);
+    return this.http.put('http://localhost:8000/update_query/',doc);
+  }
 
 
   deletecontenttopicmessage(id:any,id1:any){

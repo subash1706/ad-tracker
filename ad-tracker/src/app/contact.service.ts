@@ -16,13 +16,3 @@ export class ContactService {
 
 }
 
-
-// export class ApiserviceService {
-
-//   constructor(private http:HttpClient) { }
-//   contact(formobject:any){
-//     console.log('hello');
-    
-//     return this.http.post('http://localhost:8000/mail/',formobject)
-//   }
-// }
