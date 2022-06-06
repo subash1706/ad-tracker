@@ -5,17 +5,17 @@
 
   }
   body{
-      background-color: rgb(23, 23, 65);;
+      background-color: rgb(23, 23, 65);
   }
   .center {
     position: absolute;
-    top: 85%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px;
-    height: 650px;
-       background: transparent;
-     border: 2px solid silver;
+    width: 30%;
+    height: 80%;
+    background: transparent;
+    border: 2px solid silver;
     border-radius: 20px;
   }
   .center h1 {
@@ -60,7 +60,6 @@
     width: 0%;
     height: 2px;
   }
-  .text_field input:focus ~ label,
   .text_field input:focus ~ label {
     top: -5px;
     color:white;
@@ -90,7 +89,7 @@
     cursor: pointer;
     outline: none;
   }
-  input[type="submit"] {
+  input {
     border-color: #2691d9;
     transition: 0.5s;
   }

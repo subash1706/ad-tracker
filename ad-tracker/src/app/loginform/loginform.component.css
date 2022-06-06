@@ -83,7 +83,6 @@ body {
     height: 2px;
     background: rgb(0, 217, 255);
   }
-  .text_field input:focus ~ label,
   .text_field input:focus ~ label {
     top: -5px;
     color:white;

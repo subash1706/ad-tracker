@@ -13,7 +13,7 @@ app.use(
         origin: "http://localhost:4200",
     })   
 );
-app.post("/post_query",(request,response) => {
+app.post("/post_query",() => {
     console.log("Hi");
     console.log(request);
     var object = {
@@ -67,11 +67,6 @@ app.post("/post_query",(request,response) => {
           }
           
         };
-        // dbconnection.get(object,"ad-tracker").then(
-        //   (res) => {
-        //     response.send(res);
-        //   }
-        // )
         dbconnection.edit(request.params.id,"ad-tracker").then(
             (res) => {
               response.send(res);
