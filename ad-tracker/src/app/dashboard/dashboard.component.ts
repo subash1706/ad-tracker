@@ -14,9 +14,10 @@ export class DashboardComponent implements OnInit {
   adduser!:FormGroup;
   alldata:any=[];
   editform!:FormGroup;
-  data2:any;
+  id:any;
+  rev:any;
   edit:any;
-  editdata:any;
+  editdata:any=[];
   topic: any;
   message: any;
   EditGroup!:FormGroup;
@@ -27,9 +28,10 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.EditGroup = this.fb.group({
       Topic:['',Validators.required],
-      message:['',Validators.required]
+      message:['',Validators.required],
+      _id:['',Validators.required],
+      _rev:['',Validators.required]
     })
-    //----//
     this.api.getUser().subscribe(data=>{
       console.log(data);
       console.log('Data was fetching');
@@ -45,7 +47,9 @@ export class DashboardComponent implements OnInit {
   }
 
 
-  editcontent(data2:any){
+  editcontent(data2:any,data3:any){
+    this.id=data2;
+    this.rev=data3;
     this.api.editcontent(data2)
     .subscribe(response => {
       this.editdata=response;
@@ -67,6 +71,11 @@ export class DashboardComponent implements OnInit {
     })
 
   }
+  // updatecontent(){
+  //   this.api.update("ad-tracker",this.id,this.rev).subscribe(res=>{
+  //     console.log(res);
+  //   })
+  // }
 
   deletecontent(data:any,data1:any){
     this.api.deletecontenttopicmessage(data._id,data1._rev).subscribe(_res=>{

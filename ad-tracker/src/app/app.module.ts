@@ -21,7 +21,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddComponent } from './add/add.component';
 import { DeletecontentComponent } from './deletecontent/deletecontent.component';
 import { EditComponent } from './edit/edit.component';
-import { Dashboard1Component } from './dashboard1/dashboard1.component';
 
 
 
@@ -43,8 +42,7 @@ import { Dashboard1Component } from './dashboard1/dashboard1.component';
     DashboardComponent,
     AddComponent,
     DeletecontentComponent,
-    EditComponent,
-    Dashboard1Component
+    EditComponent
   ],
   imports: [
     BrowserModule,

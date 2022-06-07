@@ -16,7 +16,6 @@ import { AddComponent } from './add/add.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { DeletecontentComponent } from './deletecontent/deletecontent.component';
 import { EditComponent } from './edit/edit.component';
-import { Dashboard1Component } from './dashboard1/dashboard1.component';
 const routes: Routes = [
   {path:'',component:MainMenuComponent},
   {path:'features',component:FeaturesComponent},
@@ -33,8 +32,7 @@ const routes: Routes = [
   {path:'add',component:AddComponent},
   {path:'navigation',component:NavigationComponent},
   {path:'delete',component:DeletecontentComponent},
-  {path:'edit',component:EditComponent},
-  {path:'dashboard1',component:Dashboard1Component}
+  {path:'edit',component:EditComponent}
 
 ]
 

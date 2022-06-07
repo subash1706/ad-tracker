@@ -25,11 +25,18 @@ export class ContactFormComponent implements OnInit {
       email: [this.empRecord.email,Validators.required],
     })
   }
-  sendmail(Formvalue:NgForm){
+  sendemail(Formvalue:NgForm){
     console.log("Hello");
     console.log(Formvalue);
-    this.api.sendmail(Formvalue).subscribe((_data:any)=>{
-      console.log(Formvalue);
+    this.api.sendmail(Formvalue).subscribe((data:any)=>{
+      console.log(data);
+    })
+    }
+  sendmail(Formvalue:NgForm){
+    console.log("Hii");
+    console.log(Formvalue);
+    this.api.sendmail(Formvalue).subscribe((data:any)=>{
+      console.log(data);
     })
     }
 }

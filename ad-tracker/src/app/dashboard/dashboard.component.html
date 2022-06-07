@@ -12,7 +12,7 @@
         <tr *ngFor="let obj of object" style="color: white;" >
             <td><h1>{{obj.Topic}}</h1></td>
             <td><h3>{{obj.message}}</h3></td>
-            <td><button (click)="editcontent(obj._id)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><h3>Edit</h3></button></td>
+            <td><button (click)="editcontent(obj._id,obj._rev)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><h3>Edit</h3></button></td>
             <td><button (click)="deletecontent(obj,obj)" class="btn btn-danger"><h3>Delete</h3></button></td>
         </tr>
     </table>
@@ -46,7 +46,7 @@
               </div> 
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary btn-lg" (click)="update(this.EditGroup.value)">Save changes</button>
+                <button type="button" class="btn btn-primary btn-lg" (click)="update(EditGroup.value)">Save changes</button>
               </div>               
             </form> 
           </div>

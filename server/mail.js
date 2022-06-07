@@ -4,6 +4,7 @@ const app = express();
 const port = 8000;
 const cors = require('cors');
 const setmail = require('./sending');
+const { request } = require('express');
 
 
 app.use(express.static('public'));
@@ -19,17 +20,27 @@ app.get('/', function (response) {
  });
 
  app.post('/email',(request)=>{
-  console.log('mmm');
  
   var object ={
     fname:request.body.fname,
-    lname:request.body.lname,
     email:request.body.email,
     contact_number:request.body.contact_number,
+    Message:request.body.Message
   }
   setmail.getemail(request.body.email);
   console.log(object);
 })
+app.post('/mail',(request) =>{
+  var object ={
+    fname:request.body.fname,
+    email:request.body.email,
+    contact_number:request.body.contact_number,
+    Message:request.body.Message
+  }
+  setmail.getmail(request.body.Message);
+  console.log(object);
+})
+
  app.listen(port, (err) => {
   if (err) {
    return console.log('something bad happened', err);

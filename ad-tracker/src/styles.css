@@ -1,4 +1,7 @@
 @import url(../node_modules/bootstrap/dist/css/bootstrap.css);
+*{
+	line-height: 1.6;
+}
 
 .content2{
   color:  white;
@@ -152,7 +155,7 @@ span:nth-child(1) {
   margin-left: 400px;
   color: rgb(253, 253, 255);
 }
-.lineUp {
+/* .lineUp {
   animation: 6s anim-lineUp ease-out ;
   overflow-x: hidden;
 	margin-top: 50px;
@@ -174,7 +177,7 @@ span:nth-child(1) {
     opacity: 1;
     transform: translateY(0%);
   }
-}
+} */
 p{
   text-align: center;
 }

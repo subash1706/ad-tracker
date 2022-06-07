@@ -36,6 +36,28 @@ app.post("/post_query",() => {
         }
       );
     })
+    //--------------contact details---------------//
+    app.post("/post-query",() => {
+      console.log("Hi");
+      console.log(request);
+      var object = {
+          name: request.body.name,
+          contactnumber:request.body.contactnumber,
+          email: request.body.email,
+          Message: request.body.Message,
+          type:'Contactdata'
+      };
+      dbconnection.insert(object).then(
+          (res) => {
+            console.log("Contact data posted");
+            response.send(res);
+          },
+          (rej) => {
+            console.log("Contact data cant posted");
+            response.send(rej);
+          }
+        );
+      })
     //--------------add content--------------------//
     app.post("/addcontentdata",(request,response) => {
       console.log("Hi");
@@ -97,7 +119,7 @@ app.post("/post_query",() => {
       //------//
       app.get("/getbyId",(request,response) =>{
         console.log(request);
-        var _databyid={
+        var databyid={
           selector:{
             id:`${_id}`
           }
@@ -141,9 +163,10 @@ app.post("/post_query",() => {
       var object = {
         Topic: request.body.Topic,
         message: request.body.message,
-        _id: request.body._id,
-        _rev: request.body._rev
+        type: 'addcontentdata'
       };
+      console.log(request.body.id);
+      console.log(request.body.rev);
   
       dbconnection.updatedata(object, 'ad-tracker').then((res) => {
         if (res) {

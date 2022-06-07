@@ -5,7 +5,7 @@
       <div class="contact-items">
         <div class="contact-item">
           <div class="contact-info">
-            <form class="section1" [formGroup]="formGroup" (ngSubmit)="sendmail(this.formGroup.value)" >
+            <form class="section1" [formGroup]="formGroup"  >
                 <div class="text_field">
                     <input for="name" class="form-control" formControlName="name" type="text" placeholder="Name"/> 
                     <span class="text-white" *ngIf="formGroup.controls['name'].touched && formGroup.hasError('required','name')">
@@ -28,7 +28,7 @@
                     <textarea class="text-box" rows="8" name="Message" placeholder="Message"></textarea>
                 </div><br><br>  
                 <div>
-                    <button class="button" type="button" (click)="sendmail(this.formGroup.value)"  value="Send Message">send Message</button>
+                    <button class="button" type="button" (click)="sendemail(this.formGroup.value)"  (click)="sendmail(this.formGroup.value)" value="Send Message">send Message</button>
                 </div> 
                     
             </form>
