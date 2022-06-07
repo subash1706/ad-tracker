@@ -4,8 +4,6 @@ const app = express();
 const port = 8000;
 const cors = require('cors');
 const setmail = require('./sending');
-const { request } = require('express');
-
 
 app.use(express.static('public'));
 app.use(bodyParser.json());

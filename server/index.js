@@ -5,7 +5,6 @@ app.use(express.static("public"));
 const port = 8080;
 const cors =  require('cors');
 const dbconnection  =  require("./database");
-const { request, response } = require('express');
 app.use(bodypraser.json());
 app.use(express.static("public"));
 app.use(
@@ -117,7 +116,7 @@ app.post("/post_query",() => {
         });
       });
       //------//
-      app.get("/getbyId",(request,response) =>{
+      app.get("/getbyId",(request) =>{
         console.log(request);
         var databyid={
           selector:{
