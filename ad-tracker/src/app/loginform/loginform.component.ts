@@ -3,6 +3,7 @@ import { ApiserviceService } from '../apiservice.service';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import{ToastrService} from 'ngx-toastr'
 
 @Component({
   selector: 'app-loginform',
@@ -20,7 +21,7 @@ export class LoginformComponent implements OnInit {
 
 
 
-  constructor(private  http:HttpClient,private formbuilder:FormBuilder, private router:Router,private api:ApiserviceService) { }
+  constructor(private  http:HttpClient,private formbuilder:FormBuilder, private router:Router,private api:ApiserviceService,private toastr:ToastrService) { }
 
   ngOnInit(): void {  
     this.api.loginForm().subscribe(data=>{
@@ -57,10 +58,11 @@ if(i.fname ==  formvalue.Username && i.password == formvalue.password){
 }
 }
 if(this.flag == 1 ){
+  this.toastr.success("success","Logged in successfuly")
 this.router.navigate(['/dashboard']);
 }
 else{
-  this.notify = "invalid user..";
+  this.toastr.error("Failed","Invalid User")
 }
   }
 }

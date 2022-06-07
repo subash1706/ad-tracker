@@ -2,10 +2,9 @@ const express = require('express');
 const bodypraser = require('body-parser');
 const app = express();
 app.use(express.static("public"));
-const port = 8080;
+const port = 8000;
 const cors =  require('cors');
 const dbconnection  =  require("./database");
-const { request, response } = require('express');
 app.use(bodypraser.json());
 app.use(express.static("public"));
 app.use(
@@ -37,11 +36,11 @@ app.post("/post_query",() => {
       );
     })
     //--------------contact details---------------//
-    app.post("/post-query",() => {
+    app.post("/contactdetails1",(request,response) => {
       console.log("Hi");
       console.log(request);
-      var object = {
-          name: request.body.name,
+      const object = {
+          fname:request.body.fname,
           contactnumber:request.body.contactnumber,
           email: request.body.email,
           Message: request.body.Message,
@@ -84,7 +83,7 @@ app.post("/post_query",() => {
       app.get("/editcontent/:id",(request,response) => {
 
         console.log(request.params.id);
-        var object={
+        let _object={
           selector:{
             id: request.params.id,
             type:"addcontentdata"
@@ -101,7 +100,7 @@ app.post("/post_query",() => {
       app.get("/getcontent", (request, response) => {
         console.log(request);
         console.log("get called");
-        var data={
+        let data={
           selector:{
             type:"addcontentdata",
           },
@@ -119,7 +118,7 @@ app.post("/post_query",() => {
       //------//
       app.get("/getbyId",(request) =>{
         console.log(request);
-        var databyid={
+        let _databyid={
           selector:{
             id:`${_id}`
           }
@@ -140,7 +139,7 @@ app.post("/post_query",() => {
       app.get("/loginForm", (request, response) => {
         console.log(request);
         console.log("get called");
-        var data={
+        let data={
           selector:{
             type:"signupData",
           },
@@ -160,7 +159,7 @@ app.post("/post_query",() => {
 
     app.put('/update_query', (request, response) => {
       console.log('hey');
-      var object = {
+      let object = {
         Topic: request.body.Topic,
         message: request.body.message,
         type: 'addcontentdata'
@@ -186,6 +185,32 @@ app.post("/post_query",() => {
     
       console.log(`server is listening on http://localhost:${port}`);
     });
+
+
+    // --- //
+
+    app.post('/email',(request)=>{
+ 
+      let object ={
+        fname:request.body.fname,
+        email:request.body.email,
+        contact_number:request.body.contact_number,
+        Message:request.body.Message
+      }
+      setmail.getemail(request.body.email);
+      console.log(object);
+    })
+    app.post('/mail',(request) =>{
+      let object ={
+        fname:request.body.fname,
+        email:request.body.email,
+        contact_number:request.body.contact_number,
+        Message:request.body.Message
+      }
+      setmail.getmail(request.body.Message);
+      console.log(object);
+    })
+    
 
 
 

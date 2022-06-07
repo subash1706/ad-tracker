@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,NgForm,FormGroup,Validators } from '@angular/forms';
-import { ContactService } from '../contact.service';
+import { ToastrService } from 'ngx-toastr';
+import { ApiserviceService } from '../apiservice.service';
 
 @Component({
   selector: 'app-contact-form',
@@ -8,22 +9,20 @@ import { ContactService } from '../contact.service';
   styleUrls: ['./contact-form.component.css']
 })
 export class ContactFormComponent implements OnInit {
-  formGroup!: FormGroup;
-  empRecord: any={
-    name: '',
-    contactnumber: '',
-    email: '',
-    message: '',
-  };
+  data:any;
+  contactGroup!:FormGroup;
 
-  constructor(private fb: FormBuilder,private api:ContactService,) {}
+
+  constructor(private fb: FormBuilder,private api:ApiserviceService,private toastr:ToastrService) { }
+  
 
   ngOnInit(): void {
-    this.formGroup = this.fb.group({
-      name: [this.empRecord.name,Validators.required],
-      contactnumber: [this.empRecord.contactnumber,Validators.required],
-      email: [this.empRecord.email,Validators.required],
+       this.contactGroup = this.fb.group({
+      fname:['',Validators.required],
+      contactnumber:['',Validators.required],
+      email:['',Validators.required],
     })
+    
   }
   sendemail(Formvalue:NgForm){
     console.log("Hello");
@@ -42,4 +41,15 @@ export class ContactFormComponent implements OnInit {
     reloadCurrentPage() {
       window.location.reload();
      }
-}
+
+     contactdetails(Formvalue:NgForm){
+       this.api.contactdetails1(Formvalue).subscribe((_data)=>{
+         this.toastr.success('Success',"Contact Details Added ");
+       },rej=>{
+        this.toastr.error('Error',"Contact Details NotAdded ");
+       console.log("Error"+rej);
+       });
+       console.log(Formvalue)
+       }
+     }
+

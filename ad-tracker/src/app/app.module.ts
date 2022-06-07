@@ -19,6 +19,9 @@ import { LoginformComponent } from './loginform/loginform.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddComponent } from './add/add.component';
 import { DeletecontentComponent } from './deletecontent/deletecontent.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -46,7 +49,11 @@ import { DeletecontentComponent } from './deletecontent/deletecontent.component'
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    CommonModule
+
 
 
   ],
