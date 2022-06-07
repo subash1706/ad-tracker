@@ -8,7 +8,6 @@ import { FeaturesComponent } from './features/features.component';
 import { AboutComponent } from './about/about.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { TutorialComponent } from './tutorial/tutorial.component';
 import { AdtrackingComponent } from './adtracking/adtracking.component';
 import { PpctrackingComponent } from './ppctracking/ppctracking.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
@@ -30,7 +29,6 @@ import { DeletecontentComponent } from './deletecontent/deletecontent.component'
     AboutComponent,
     MainMenuComponent,
     NavigationComponent,
-    TutorialComponent,
     AdtrackingComponent,
     PpctrackingComponent,
     ContactFormComponent,

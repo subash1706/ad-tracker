@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { FeaturesComponent } from './features/features.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
-import{TutorialComponent} from './tutorial/tutorial.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { PpctrackingComponent } from './ppctracking/ppctracking.component';
 import { AdtrackingComponent } from './adtracking/adtracking.component';
@@ -20,7 +19,6 @@ const routes: Routes = [
   {path:'features',component:FeaturesComponent},
   {path:'contact',component:ContactFormComponent},
   {path:'about',component:AboutComponent},
-  {path:'tutorial',component:TutorialComponent},
   {path:'adtracking',component:AdtrackingComponent},
   {path:'ppctracking',component:PpctrackingComponent},
   {path:'pixeltracking',component:PixeltrackingComponent},
