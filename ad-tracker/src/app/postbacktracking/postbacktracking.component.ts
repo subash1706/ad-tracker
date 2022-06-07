@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostbacktrackingComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    //postback//
+   }
 
   ngOnInit(): void {
+    console.log();
   }
 
 }

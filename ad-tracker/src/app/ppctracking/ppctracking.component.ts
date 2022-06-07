@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PpctrackingComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    //ppc tracking//
+   }
 
   ngOnInit(): void {
+    console.log();
   }
 
 }

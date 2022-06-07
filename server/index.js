@@ -15,7 +15,7 @@ app.use(
 app.post("/post_query",() => {
     console.log("Hi");
     console.log(request);
-    var object = {
+    let object = {
         fname: request.body.fname,
         lname: request.body.lname,
         email: request.body.email,
@@ -39,7 +39,7 @@ app.post("/post_query",() => {
     app.post("/contactdetails1",(request,response) => {
       console.log("Hi");
       console.log(request);
-      const object = {
+      let object = {
           fname:request.body.fname,
           contactnumber:request.body.contactnumber,
           email: request.body.email,
@@ -61,7 +61,7 @@ app.post("/post_query",() => {
     app.post("/addcontentdata",(request,response) => {
       console.log("Hi");
       console.log(request);
-      var object = {
+      let object = {
         Topic: request.body.Topic,
         message: request.body.message,
         id: request.body.id,

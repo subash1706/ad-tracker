@@ -19,7 +19,7 @@ app.get('/', function (response) {
 
  app.post('/email',(request)=>{
  
-  var object ={
+  let object ={
     fname:request.body.fname,
     email:request.body.email,
     contact_number:request.body.contact_number,
@@ -29,7 +29,7 @@ app.get('/', function (response) {
   console.log(object);
 })
 app.post('/mail',(request) =>{
-  var object ={
+  let object ={
     fname:request.body.fname,
     email:request.body.email,
     contact_number:request.body.contact_number,

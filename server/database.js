@@ -5,7 +5,7 @@ const password = "ff4e6d701676a004128c9bdb601b52d2";
 
  const cloudant = Cloudant ({ url: url, username:username, password: password});
 
- var insert = function(paramsvalue){
+ let insert = function(paramsvalue){
     console.log(paramsvalue);
     return cloudant.use("ad-tracker").insert(paramsvalue);
 }
@@ -17,17 +17,17 @@ insert = function(paramsvalue){
   console.log(paramsvalue);
   return cloudant.use("ad-tracker").insert(paramsvalue);
 }
-var get = function (data,dbname) {
+let get = function (data,dbname) {
   return cloudant.use(dbname).find(data);
 };
-var edit = function (data,dbname) {
+let edit = function (data,dbname) {
   return cloudant.use(dbname).get(data);
 };
 
-var del_id = function (id, id1, dbname) {
+let del_id = function (id, id1, dbname) {
   return cloudant.use(dbname).destroy(id, id1);
 };
-var updatedata = function(data,dbname){
+let updatedata = function(data,dbname){
   console.log(data);
   return cloudant.use(dbname).insert(data);
 }
