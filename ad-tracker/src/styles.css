@@ -184,7 +184,6 @@ a {
 	color: wheat;
 }
 .container {
-	min-height: 100vh;
 	width: 65%;
 	display: flex;
 	justify-content: center;
@@ -205,7 +204,7 @@ img {
 	margin-top: -200px;
 }
 .section-title span {
-	color: crimson;
+	color: rgb(179, 110, 123);
 }
 
 .cta {
@@ -352,8 +351,9 @@ img {
 	top: 0;
 }
 #hero {
-	background: linear-gradient( rgba(34, 53, 117, 0.5), rgba(63, 62, 62, 0.5) ),url(/assets/tracking\ gif.gif);
-	background-size: cover;
+	background: linear-gradient( rgba(34, 53, 117, 0.5), rgba(63, 62, 62, 0.5) ),url(./assets/editbg.gif);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 }
 #hero .hero{
 	
