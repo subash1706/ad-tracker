@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdtrackingComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    //adtracking//
+   }
 
   ngOnInit(): void {
+    console.log();
   }
 
 }

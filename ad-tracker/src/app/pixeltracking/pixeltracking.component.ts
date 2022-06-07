@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PixeltrackingComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    //pixel tracking//
+
+  }
 
   ngOnInit(): void {
+    console.log();
   }
 
 }

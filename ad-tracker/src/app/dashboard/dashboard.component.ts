@@ -63,7 +63,7 @@ export class DashboardComponent implements OnInit {
 
   update(FormValue:NgForm){
     console.log(FormValue);
-    this.api.updatedata(FormValue).subscribe(res=>{
+    this.api.updatedata(FormValue).subscribe(_res=>{
       console.log("Your data was updated successfully!");
       alert('your data was Updated successfully')
     },rej=>{
@@ -71,11 +71,6 @@ export class DashboardComponent implements OnInit {
     })
 
   }
-  // updatecontent(){
-  //   this.api.update("ad-tracker",this.id,this.rev).subscribe(res=>{
-  //     console.log(res);
-  //   })
-  // }
 
   deletecontent(data:any,data1:any){
     this.api.deletecontenttopicmessage(data._id,data1._rev).subscribe(_res=>{
