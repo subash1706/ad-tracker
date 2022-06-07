@@ -39,4 +39,7 @@ export class ContactFormComponent implements OnInit {
       console.log(data);
     })
     }
+    reloadCurrentPage() {
+      window.location.reload();
+     }
 }

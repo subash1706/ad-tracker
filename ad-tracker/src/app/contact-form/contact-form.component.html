@@ -24,11 +24,12 @@
                         *Email is required!!!!
                     </span>    
                 </div>
-                <div >
-                    <textarea class="text-box" rows="8" name="Message" placeholder="Message"></textarea>
+                <div class="text-field">
+                  <input class="text-box" rows="8" name="Message" placeholder="Message">
+                                 
                 </div><br><br>  
                 <div>
-                    <button class="button" type="button" (click)="sendemail(this.formGroup.value)"  (click)="sendmail(this.formGroup.value)" value="Send Message">send Message</button>
+                    <button class="button" type="button" (click)="sendemail(this.formGroup.value)"  (click)="sendmail(this.formGroup.value)" (click)="reloadCurrentPage()" value="Send Message">send Message</button>
                 </div> 
                     
             </form>
