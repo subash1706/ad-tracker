@@ -145,6 +145,7 @@ app.post("/post_query",() => {
           },
         };
         dbconnection.get(data,"ad-tracker").then((res) => {
+          console.log();
           if (res) {
             console.log("process success")
             response.send(res);
