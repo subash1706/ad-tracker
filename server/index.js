@@ -83,7 +83,7 @@ app.post("/post_query",() => {
       app.get("/editcontent/:id",(request,response) => {
 
         console.log(request.params.id);
-        let _object={
+        let object={
           selector:{
             id: request.params.id,
             type:"addcontentdata"
@@ -93,6 +93,7 @@ app.post("/post_query",() => {
         dbconnection.edit(request.params.id,"ad-tracker").then(
             (res) => {
               response.send(res);
+              console.log(object);
             }
           )
       });
@@ -115,16 +116,7 @@ app.post("/post_query",() => {
           }
         });
       });
-      //------//
-      app.get("/getbyId",(request) =>{
-        console.log(request);
-        let _databyid={
-          selector:{
-            id:`${_id}`
-          }
-        }
-      })
-
+     
       app.delete("/deletecontenttopicmessage/:id/:id1", (request, response) => {
         dbconnection.del_id(request.params.id, request.params.id1, "ad-tracker")
           .then((res) => {
