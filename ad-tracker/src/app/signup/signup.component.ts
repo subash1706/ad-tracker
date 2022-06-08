@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,FormGroup,NgForm,Validators } from '@angular/forms';
+import { FormBuilder,FormGroup,MinLengthValidator,NgForm,Validators } from '@angular/forms';
 import { ApiserviceService } from '../apiservice.service';
 @Component({
   selector: 'app-signup',
@@ -26,16 +26,15 @@ export class SignupComponent implements OnInit {
     this.signup = this.fb.group({
       fname:['',Validators.required],
       lname:['',Validators.required],
-      email:['',[Validators.required,Validators.pattern("[a-zA-Z0-9]*@gmail.com")]],
-      password:['',[Validators.required,Validators.pattern("[a-zA-z@_]{6,}")]],
-      confirm_password:['',[Validators.required,Validators.pattern("[a-zA-z@_]{6,}")]],            
-      contact_number:['',[Validators.required,Validators.min(1000000000),Validators.max(9999999999)]]
+      email:['',[Validators.required]],
+      password:['',[Validators.required]]
 
     })
   }
 
 signupdata(FormValue:NgForm){
-  this.api.signupdata(FormValue).subscribe((_data)=>{
+  this.api.addadmindata(FormValue).subscribe((data)=>{
+    console.log(data);
     alert("Signed Up successfully");
     this.signup.reset();
   },rej=>{

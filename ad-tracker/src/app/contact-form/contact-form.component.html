@@ -14,16 +14,22 @@
                      
                 </div>
                 <div class="text_field">
-                    <input for="contactnumber" class="form-control" formControlName="contactnumber" type="number" placeholder="Contact Number"/>
+                    <input for="contactnumber" class="form-control" formControlName="contactnumber" .pattern="[A-Za-z0-9@!_]{10,}"type="number" placeholder="Contact Number"/>
                     <span class="text-danger" *ngIf="contactGroup.controls['contactnumber'].touched && contactGroup.hasError('required','contactnumber')">
                       * contactnumber is required!!
+                    </span>
+                    <span class="text-danger" *ngIf="contactGroup.hasError('required','contactnumber')">
+                      * contactnumber should contain 10 Numbers!!
                     </span>   
                 </div>
                 <div class="text_field">
-                    <input for="email" class="form-control" formControlName="email" type="email" placeholder="Email"/>
+                    <input for="email" class="form-control" formControlName="email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" type="email" placeholder="Email"/>
                     <span class="text-danger" *ngIf="contactGroup.controls['email'].touched && contactGroup.hasError('required','email')">
                       * Email is required!!
                     </span>  
+                    <span class="text-danger" *ngIf="contactGroup.hasError('pattern','email')">
+                      * Enter Valid Email
+                    </span> 
                 </div>
                 <div class="text-field"  >
                   <textarea for="message" class="form-control" formControlName="message" class="text-box" placeholder="Message"></textarea>

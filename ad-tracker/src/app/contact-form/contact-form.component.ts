@@ -49,7 +49,8 @@ export class ContactFormComponent implements OnInit {
 
      contactdetails(Formvalue:NgForm){
       console.log(Formvalue);
-       this.api.contactdetails1(Formvalue).subscribe((_data)=>{
+       this.api.contactdetails(Formvalue).subscribe((data)=>{
+         console.log(data);
          this.toastr.success('Success',"Contact Details Added ");
        },rej=>{
         this.toastr.error('Error',"Contact Details NotAdded ");

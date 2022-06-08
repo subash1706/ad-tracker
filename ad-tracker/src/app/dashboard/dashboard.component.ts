@@ -86,7 +86,8 @@ export class DashboardComponent implements OnInit {
 
   update(FormValue:any){
     console.log(FormValue);
-    this.api.updatedata(FormValue).subscribe(_res=>{
+    this.api.updatedata(FormValue).subscribe(res=>{
+      console.log(res);
       console.log("Your data was updated successfully!");
       this.object=[];
       this.get();

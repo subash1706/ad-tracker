@@ -12,9 +12,11 @@ app.use(
         origin: "http://localhost:4200",
     })   
 );
-app.post("/post_query",() => {
+
+//--------Adding New Admin------//
+
+app.post("/add-admin",(request,response) => {
     console.log("Hi");
-    console.log(request);
     let object = {
         fname: request.body.fname,
         lname: request.body.lname,
@@ -35,8 +37,10 @@ app.post("/post_query",() => {
         }
       );
     })
-    //--------------contact details---------------//
-    app.post("/contactdetails1",(request,response) => {
+
+//--------------posting contact details---------------//
+
+    app.post("/contactdetails",(request,response) => {
       console.log("Hi");
       console.log(request);
       let object = {
@@ -57,7 +61,9 @@ app.post("/post_query",() => {
           }
         );
       })
-    //--------------add content--------------------//
+
+//--------------Adding  content data--------------------//
+
     app.post("/addcontentdata",(request,response) => {
       console.log("Hi");
       console.log(request);
@@ -80,6 +86,9 @@ app.post("/post_query",() => {
           }
         )
       })
+
+//--------Getting Id for editing content------// 
+
       app.get("/editcontent/:id",(request,response) => {
 
         console.log(request.params.id);
@@ -97,7 +106,9 @@ app.post("/post_query",() => {
             }
           )
       });
-      //------//
+
+//-------Getting content data---------//
+
       app.get("/getcontent", (request, response) => {
         console.log(request);
         console.log("get called");
@@ -116,7 +127,8 @@ app.post("/post_query",() => {
           }
         });
       });
-      //----------//
+      
+//---------Getting Contact data----------//
       app.get("/getcontact", (request, response) => {
         console.log(request);
         console.log("get called");
@@ -135,8 +147,8 @@ app.post("/post_query",() => {
           }
         });
       });
-      
-     
+
+//------------Deleting content data--------//
       app.delete("/deletecontenttopicmessage/:id/:id1", (request, response) => {
         dbconnection.del_id(request.params.id, request.params.id1, "ad-tracker")
           .then((res) => {
@@ -148,6 +160,8 @@ app.post("/post_query",() => {
           });
       });
 
+//----------------Deleting Contact data-------------------//      
+
       app.delete("/deletecontact/:id/:id1", (request, response) => {
         dbconnection.del_id(request.params.id, request.params.id1, "ad-tracker")
           .then((res) => {
@@ -158,6 +172,8 @@ app.post("/post_query",() => {
             }
           });
       });
+
+//--------------Getting Login form data-----//
 
       app.get("/loginForm", (request, response) => {
         console.log(request);
@@ -179,7 +195,7 @@ app.post("/post_query",() => {
         });
       });
 
-    //----//
+    //-----------updating content data------------//
 
     app.put('/update_query', (request, response) => {
       console.log('hey');
@@ -190,8 +206,7 @@ app.post("/post_query",() => {
         _id:request.body.id,
         _rev:request.body.rev,
         type: 'addcontentdata'
-      };
-  
+      };  
       dbconnection.updatedata(object, 'ad-tracker').then((res) => {
         if (res) {
           console.log('updated....');
@@ -201,7 +216,9 @@ app.post("/post_query",() => {
           response.send('error');
         }
       });
-    }); 
+    });
+
+//----------------------//
     
     app.listen(port, (err) => {
       if (err) {
@@ -211,8 +228,7 @@ app.post("/post_query",() => {
       console.log(`server is listening on http://localhost:${port}`);
     });
 
-
-    // --- //
+//-------------sending Email to User------- //
 
     app.post('/email',(request)=>{
  
@@ -225,6 +241,8 @@ app.post("/post_query",() => {
       setmail.getemail(request.body.email);
       console.log(object);
     })
+//-----------sending Email to admin--------//
+
     app.post('/mail',(request) =>{
       let object ={
         fname:request.body.fname,
