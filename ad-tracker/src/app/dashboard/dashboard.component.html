@@ -16,8 +16,6 @@
             <td><button (click)="deletecontent(obj,obj)" class="btn btn-danger"><h3>Delete</h3></button></td>
         </tr>
     </table>
-
-
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -30,11 +28,11 @@
               <div  [formGroup]="EditGroup">
                 <div for="Topic" class="form-control">
                   <label class="Topic" >Topic</label><br>
-                  <input type="text" class="text-box" formControlName="Topic" value="{{topic}}"><br>
+                  <input type="text" class="text-box" formControlName="Topic"><br>
                 </div>
                 <div for="message" class="form-control" >
                   <label class="Topic" >Message</label><br>
-                  <textarea rows="8" formControlName="message" class="text-box" type="text" value="{{message}}"></textarea><br><br>
+                  <textarea rows="8" formControlName="message" class="text-box" type="text"></textarea><br><br>
                 </div>
               </div> 
               <div class="modal-footer">
@@ -43,11 +41,51 @@
               </div>               
             </form> 
           </div>
-
         </div>
       </div>
     </div>
-   
+  <table> 
+      <caption></caption>
+      <th>
+        <tr>
+          <td><h3>Name</h3></td>
+          <td><h3>Contact Number</h3></td>
+          <td><h3>Email</h3></td>
+          <td><h3>Message</h3></td>
+        </tr>
+        <tr *ngFor="let obj of contact" style="color: white;" >
+            <td><h1>{{obj.fname}}</h1></td>
+            <td><h3>{{obj.contactnumber}}</h3></td>
+            <td><h3>{{obj.email}}</h3></td>
+            <td><h3>{{obj.message}}</h3></td>
+            <td><button (click)="editcontent(obj._id,obj._rev)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1"><h3>Reply</h3></button></td>
+            <td><button (click)="deletecontact(obj,obj)" class="btn btn-danger"><h3>Delete</h3></button></td>
+        </tr>
+    </table><div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div  [formGroup]="replyGroup">
+                <div for="Topic" class="form-control">
+                  <label class="Topic" >Topic</label><br>
+                  <input type="text" class="text-box" formControlName="Topic"><br>
+                </div>
+                <div for="message" class="form-control" >
+                  <label class="Topic" >Message</label><br>
+                  <textarea rows="8" formControlName="message" class="text-box" type="text"></textarea><br><br>
+                </div>
+              </div> 
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary btn-lg" (click)="update(replyGroup.value)">Save changes</button>
+              </div>               
+            </form> 
+          </div>   
 </body>
 
 

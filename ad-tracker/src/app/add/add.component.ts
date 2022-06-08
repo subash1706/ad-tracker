@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder,NgForm, Validators } from '@angular/forms';
 import { ApiserviceService } from '../apiservice.service';
+import{ ToastrService} from 'ngx-toastr';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -16,7 +17,7 @@ export class AddComponent implements OnInit {
   object: any;
 
 
-  constructor(private fb:FormBuilder,private api:ApiserviceService) { }
+  constructor(private fb:FormBuilder,private api:ApiserviceService,private toastr:ToastrService) { }
 
   ngOnInit(): void {
     this.AddGroup = this.fb.group({
@@ -27,10 +28,11 @@ export class AddComponent implements OnInit {
 
   addcontent(FormValue:NgForm){
     this.api.addcontentdata(FormValue).subscribe((_data)=>{
-      alert("Content added Successfully");
+      this.toastr.success("success","Content added Successfully")
       this.AddGroup.reset();
     },rej=>{
       console.log("Error" + rej);
+      this.toastr.error("Failed","Content cannot be added Successfully")
     });
     console.log(FormValue);
   }

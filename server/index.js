@@ -40,10 +40,10 @@ app.post("/post_query",() => {
       console.log("Hi");
       console.log(request);
       let object = {
-          fname:request.body.fname,
+          name:request.body.name,
           contactnumber:request.body.contactnumber,
           email: request.body.email,
-          Message: request.body.Message,
+          message: request.body.message,
           type:'Contactdata'
       };
       dbconnection.insert(object).then(
@@ -116,8 +116,39 @@ app.post("/post_query",() => {
           }
         });
       });
+      //----------//
+      app.get("/getcontact", (request, response) => {
+        console.log(request);
+        console.log("get called");
+        let data={
+          selector:{
+            type:"Contactdata",
+          },
+        };
+        dbconnection.get(data,"ad-tracker").then((res) => {
+          if (res) {
+            console.log("process success")
+            response.send(res);
+            
+          } else {
+            console.log("process failed")
+          }
+        });
+      });
+      
      
       app.delete("/deletecontenttopicmessage/:id/:id1", (request, response) => {
+        dbconnection.del_id(request.params.id, request.params.id1, "ad-tracker")
+          .then((res) => {
+            if (res) {
+              response.send(res);
+            } else {
+              response.send("error");
+            }
+          });
+      });
+
+      app.delete("/deletecontact/:id/:id1", (request, response) => {
         dbconnection.del_id(request.params.id, request.params.id1, "ad-tracker")
           .then((res) => {
             if (res) {
@@ -152,13 +183,14 @@ app.post("/post_query",() => {
 
     app.put('/update_query', (request, response) => {
       console.log('hey');
+      console.log(request.body);
       let object = {
         Topic: request.body.Topic,
         message: request.body.message,
+        _id:request.body.id,
+        _rev:request.body.rev,
         type: 'addcontentdata'
       };
-      console.log(request.body.id);
-      console.log(request.body.rev);
   
       dbconnection.updatedata(object, 'ad-tracker').then((res) => {
         if (res) {

@@ -20,6 +20,9 @@ insert = function(paramsvalue){
 let get = function (data,dbname) {
   return cloudant.use(dbname).find(data);
 };
+ get = function (data,dbname) {
+  return cloudant.use(dbname).find(data);
+};
 let edit = function (data,dbname) {
   return cloudant.use(dbname).get(data);
 };

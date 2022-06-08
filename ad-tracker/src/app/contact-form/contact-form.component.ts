@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder,NgForm,FormGroup,Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ApiserviceService } from '../apiservice.service';
+import { ContactService } from '../contact.service';
 
 @Component({
   selector: 'app-contact-form',
@@ -13,33 +14,37 @@ export class ContactFormComponent implements OnInit {
   contactGroup!:FormGroup;
 
 
-  constructor(private fb: FormBuilder,private api:ApiserviceService,private toastr:ToastrService) { }
+  constructor(private fb: FormBuilder,private api:ApiserviceService,private contact:ContactService,private toastr:ToastrService) { }
   
 
   ngOnInit(): void {
        this.contactGroup = this.fb.group({
-      fname:['',Validators.required],
+      name:['',Validators.required],
       contactnumber:['',Validators.required],
       email:['',Validators.required],
+      message:['',Validators.required]
     })
     
   }
   sendemail(Formvalue:NgForm){
     console.log("Hello");
     console.log(Formvalue);
-    this.api.sendemail(Formvalue).subscribe((data:any)=>{
+    this.contact.sendemail(Formvalue).subscribe((data:any)=>{
       console.log(data);
     })
     }
   sendmail(Formvalue:NgForm){
     console.log("Hii");
     console.log(Formvalue);
-    this.api.sendmail(Formvalue).subscribe((data:any)=>{
+    this.contact.sendmail(Formvalue).subscribe((data:any)=>{
       console.log(data);
     })
     }
     reloadCurrentPage() {
-      window.location.reload();
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+      
      }
 
      contactdetails(Formvalue:NgForm){

@@ -2,14 +2,14 @@ const nodemail = require('nodemailer');
 let sender = nodemail.createTransport({
     service:'gmail',
     auth:{
-        user:'adtracker6@gmail.com',
-        pass:'ad-tracker1706'
+        user:'trackspot@outlook.com',
+        pass:'track@1706'
     }
 })
 module.exports.getemail=function(params)
 {
 let composemail = {
-    from:'adtracker6@gmail.com',
+    from:'trackspot@outlook.com',
     to:params,
     subject:`Message`,
     text:'Thank you for contacting us!'
@@ -28,8 +28,8 @@ sender.sendMail(composemail,function(err,res){
 module.exports.getmail=function(params1)
 {
 let composemail = {
-    from:'adtracker6@gmail.com',
-    to:'adtracker6@gmail.com',
+    from:'trackspot@outlook.com',
+    to:'trackspot@outlook.com',
     subject:'Got an message from user',
     text:params1
     

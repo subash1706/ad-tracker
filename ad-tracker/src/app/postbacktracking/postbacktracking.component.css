@@ -340,7 +340,7 @@ body .container{
     #ff1361 67%,
     #fff800 100%
   );
-  background-size: auto auto;
+  background-size: 200% auto;
   background-clip: border-box;
   color: #fff;
   -webkit-background-clip: text;

@@ -17,19 +17,15 @@ export class ApiserviceService {
   contactdetails1(formObject:any){
     return this.http.post<any>('http://localhost:8000/contactdetails1',formObject);
   }
-  sendemail(formobject:any){
-    console.log('hello');
-    return this.http.post('http://localhost:8000/email/',formobject)
-  }
-  sendmail(formobject:any){
-    console.log('hi');
-    return this.http.post('http://localhost:8000/mail/',formobject)
-  }
+
   addcontentdata(formObject:any){
     return this.http.post('http://localhost:8000/addcontentdata',formObject);
   }
   getUser(){
     return this.http.get('http://localhost:8000/getcontent');
+  }
+  getcontact(){
+    return this.http.get('http://localhost:8000/getcontact');
   }
   editcontent(id2:any){
     console.log("hello",id2)
@@ -45,6 +41,12 @@ export class ApiserviceService {
     return this.http.delete(`http://localhost:8000/deletecontenttopicmessage/${id}/${id1}`);
 
   }
+  
+  deletecontact(id:any,id1:any){
+    return this.http.delete(`http://localhost:8000/deletecontenttopicmessage/${id}/${id1}`);
+
+  }
+
 
 
 }

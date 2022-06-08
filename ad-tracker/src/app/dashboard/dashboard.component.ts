@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ApiserviceService } from '../apiservice.service';
+import{ToastrService} from 'ngx-toastr';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -11,6 +12,7 @@ export class DashboardComponent implements OnInit {
   AddGroup!:FormGroup;
   value:boolean=true;
   object:any =[];
+  contact:any=[];
   adduser!:FormGroup;
   alldata:any=[];
   editform!:FormGroup;
@@ -21,17 +23,34 @@ export class DashboardComponent implements OnInit {
   topic: any;
   message: any;
   EditGroup!:FormGroup;
+  contactdata:any=[];
   
 
-  constructor(private api:ApiserviceService, private fb:FormBuilder) { }
+  constructor(private api:ApiserviceService, private fb:FormBuilder,private toastr:ToastrService) { }
 
   ngOnInit(): void {
     this.EditGroup = this.fb.group({
       Topic:['',Validators.required],
       message:['',Validators.required],
-      _id:['',Validators.required],
-      _rev:['',Validators.required]
+      id:['',Validators.required],
+      rev:['',Validators.required]
     })
+    this.get();
+        this.api.getcontact().subscribe(data=>{
+      console.log(data);
+      console.log('Data was fetching');
+      this.contactdata=data;
+      this.contactdata=this.contactdata.docs;
+      console.log(this.contactdata);
+      for(const obj of this.contactdata){
+            this.contact.push(obj);
+            console.log('Fetched successfuly in add component')
+      }
+      console.log(this.object);
+    });
+  }
+
+  get(){
     this.api.getUser().subscribe(data=>{
       console.log(data);
       console.log('Data was fetching');
@@ -44,8 +63,8 @@ export class DashboardComponent implements OnInit {
       }
       console.log(this.object);
     });
-  }
 
+  }
 
   editcontent(data2:any,data3:any){
     this.id=data2;
@@ -54,18 +73,23 @@ export class DashboardComponent implements OnInit {
     .subscribe(response => {
       this.editdata=response;
       console.log(this.editdata);
-      this.topic = this.editdata.Topic;
-      this.message = this.editdata.message;
+      this.EditGroup.controls['Topic'].setValue(this.editdata.Topic);
+      this.EditGroup.controls['message'].setValue(this.editdata.message);
+      this.EditGroup.controls['id'].setValue(this.editdata._id);
+      this.EditGroup.controls['rev'].setValue(this.editdata._rev);
+
     })
 
   }
 
 
-  update(FormValue:NgForm){
+  update(FormValue:any){
     console.log(FormValue);
     this.api.updatedata(FormValue).subscribe(_res=>{
       console.log("Your data was updated successfully!");
-      alert('your data was Updated successfully')
+      this.object=[];
+      this.get();
+      alert('your data was Updated successfully');
     },rej=>{
       console.log("can not update....."+rej);
     })
@@ -74,6 +98,13 @@ export class DashboardComponent implements OnInit {
 
   deletecontent(data:any,data1:any){
     this.api.deletecontenttopicmessage(data._id,data1._rev).subscribe(_res=>{
+      this.toastr.success("Done","Content deleted successfully");
+      location.reload()
+    })
+  }
+  deletecontact(data:any,data1:any){
+    this.api.deletecontact(data._id,data1._rev).subscribe(_res=>{
+      this.toastr.success("Done","Content deleted successfully");
       location.reload()
     })
   }
