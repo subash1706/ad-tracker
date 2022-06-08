@@ -8,7 +8,7 @@
         <div class="text_field">
           <input type="password" required placeholder="Password" formControlName="password" />
         </div>
-        <input type="submit"  (click)="alogin(this.loginForm.value)"  value="Login" />
+        <input type="submit" [disabled]="!loginForm.valid" (click)="alogin(this.loginForm.value)"  value="Login" />
       </form>
     </div><br><br>
    <section id="footer">

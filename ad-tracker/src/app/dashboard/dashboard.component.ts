@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit {
   message: any;
   EditGroup!:FormGroup;
   contactdata:any=[];
+  replyGroup!:FormGroup;
   
 
   constructor(private api:ApiserviceService, private fb:FormBuilder,private toastr:ToastrService) { }
@@ -95,6 +96,7 @@ export class DashboardComponent implements OnInit {
     })
 
   }
+
 
   deletecontent(data:any,data1:any){
     this.api.deletecontenttopicmessage(data._id,data1._rev).subscribe(_res=>{
