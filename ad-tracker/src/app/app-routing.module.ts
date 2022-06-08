@@ -13,7 +13,6 @@ import { LoginformComponent } from './loginform/loginform.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddComponent } from './add/add.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { DeletecontentComponent } from './deletecontent/deletecontent.component';
 const routes: Routes = [
   {path:'',component:MainMenuComponent},
   {path:'features',component:FeaturesComponent},
@@ -27,8 +26,7 @@ const routes: Routes = [
   {path:'loginform',component:LoginformComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'add',component:AddComponent},
-  {path:'navigation',component:NavigationComponent},
-  {path:'delete',component:DeletecontentComponent},
+  {path:'navigation',component:NavigationComponent}
 ]
 
 @NgModule({

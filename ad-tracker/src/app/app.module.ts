@@ -18,7 +18,6 @@ import{HttpClientModule} from '@angular/common/http';
 import { LoginformComponent } from './loginform/loginform.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddComponent } from './add/add.component';
-import { DeletecontentComponent } from './deletecontent/deletecontent.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
@@ -40,8 +39,7 @@ import { CommonModule } from '@angular/common';
     SignupComponent,
     LoginformComponent,
     DashboardComponent,
-    AddComponent,
-    DeletecontentComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
