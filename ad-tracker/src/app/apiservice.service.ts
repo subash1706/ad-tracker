@@ -15,6 +15,7 @@ export class ApiserviceService {
     return this.http.get('http://localhost:8000/loginForm');
   }
   contactdetails1(formObject:any){
+    console.log(formObject);
     return this.http.post<any>('http://localhost:8000/contactdetails1',formObject);
   }
 

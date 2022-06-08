@@ -40,12 +40,12 @@ app.post("/post_query",() => {
       console.log("Hi");
       console.log(request);
       let object = {
-          name:request.body.name,
+          fname:request.body.fname,
           contactnumber:request.body.contactnumber,
           email: request.body.email,
           message: request.body.message,
           type:'Contactdata'
-      };
+      };console.log(object);
       dbconnection.insert(object).then(
           (res) => {
             console.log("Contact data posted");

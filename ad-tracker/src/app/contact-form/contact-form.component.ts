@@ -19,7 +19,7 @@ export class ContactFormComponent implements OnInit {
 
   ngOnInit(): void {
        this.contactGroup = this.fb.group({
-      name:['',Validators.required],
+      fname:['',Validators.required],
       contactnumber:['',Validators.required],
       email:['',Validators.required],
       message:['',Validators.required]
@@ -48,13 +48,14 @@ export class ContactFormComponent implements OnInit {
      }
 
      contactdetails(Formvalue:NgForm){
+      console.log(Formvalue);
        this.api.contactdetails1(Formvalue).subscribe((_data)=>{
          this.toastr.success('Success',"Contact Details Added ");
        },rej=>{
         this.toastr.error('Error',"Contact Details NotAdded ");
        console.log("Error"+rej);
        });
-       console.log(Formvalue)
+       
        }
      }
 

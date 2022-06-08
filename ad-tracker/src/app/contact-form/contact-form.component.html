@@ -7,14 +7,14 @@
           <div class="contact-info">
             <form class="section1" [formGroup]="contactGroup" >
                 <div class="text_field">
-                    <input for="name" class="form-control" formControlName="name" type="text" placeholder="Name"/> 
-                    <span class="text-danger" *ngIf="contactGroup.controls['name'].touched && contactGroup.hasError('required','name')">
+                    <input for="fname" class="form-control" formControlName="fname" type="text" placeholder="Name"/> 
+                    <span class="text-danger" *ngIf="contactGroup.controls['fname'].touched && contactGroup.hasError('required','fname')">
                       * Name is required!!
                     </span>
                      
                 </div>
                 <div class="text_field">
-                    <input for="contactnumber" class="form-control" formControlName="contactnumber" type="text" placeholder="Contact Number"/>
+                    <input for="contactnumber" class="form-control" formControlName="contactnumber" type="number" placeholder="Contact Number"/>
                     <span class="text-danger" *ngIf="contactGroup.controls['contactnumber'].touched && contactGroup.hasError('required','contactnumber')">
                       * contactnumber is required!!
                     </span>   
