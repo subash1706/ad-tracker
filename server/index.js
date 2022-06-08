@@ -127,11 +127,11 @@ app.post("/post_query",() => {
         };
         dbconnection.get(data,"ad-tracker").then((res) => {
           if (res) {
-            console.log("process success")
+            console.log("success")
             response.send(res);
             
           } else {
-            console.log("process failed")
+            console.log("failed")
           }
         });
       });
@@ -143,7 +143,7 @@ app.post("/post_query",() => {
             if (res) {
               response.send(res);
             } else {
-              response.send("error");
+              response.send("failed");
             }
           });
       });
