@@ -26,6 +26,7 @@ export class DashboardComponent implements OnInit {
   contactdata:any=[];
   replyGroup!:FormGroup;
   
+  
 
   constructor(public api:ApiserviceService, private fb:FormBuilder,private toastr:ToastrService) { }
 
@@ -49,6 +50,7 @@ export class DashboardComponent implements OnInit {
       }
       console.log(this.object);
     });
+  
   }
 
   get(){
@@ -95,7 +97,7 @@ export class DashboardComponent implements OnInit {
     },rej=>{
       console.log("can not update....."+rej);
     })
-
+    location.reload()
   }
 
 

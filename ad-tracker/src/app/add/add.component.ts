@@ -15,6 +15,7 @@ export class AddComponent implements OnInit {
     Message:''
   }
   object: any;
+  formObj:any;
 
 
   constructor(private fb:FormBuilder,private api:ApiserviceService,private toastr:ToastrService) { }
@@ -22,19 +23,28 @@ export class AddComponent implements OnInit {
   ngOnInit(): void {
     this.AddGroup = this.fb.group({
       Topic:['',Validators.required],
-      message:['',Validators.required]
+      message:['',Validators.required],
+      view:[''],
+      like:['']
     })
   }
 
-  addcontent(FormValue:NgForm){
-    this.api.addcontentdata(FormValue).subscribe((_data)=>{
+  addcontent(FormValue:any){
+    this.formObj={
+      Topic:FormValue.Topic,
+      like:0,
+      message:FormValue.message,
+      view:0
+    }
+    console.log(this.formObj);
+    this.api.addcontentdata(this.formObj).subscribe((_data)=>{
       this.toastr.success("success","Content added Successfully")
       this.AddGroup.reset();
     },rej=>{
       console.log("Error" + rej);
       this.toastr.error("Failed","Content cannot be added Successfully")
     });
-    console.log(FormValue);
+    console.log(this.formObj);
   }
   
 

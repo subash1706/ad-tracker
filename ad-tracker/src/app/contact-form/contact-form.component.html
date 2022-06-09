@@ -14,11 +14,11 @@
                      
                 </div>
                 <div class="text_field">
-                    <input for="contactnumber" class="form-control" formControlName="contactnumber" .pattern="[A-Za-z0-9@!_]{10,}"type="number" placeholder="Contact Number"/>
+                    <input for="contactnumber" class="form-control" formControlName="contactnumber" maxlength="10" pattern="[A-Za-z0-9@!_]{10,}"type="number" placeholder="Contact Number"/>
                     <span class="text-danger" *ngIf="contactGroup.controls['contactnumber'].touched && contactGroup.hasError('required','contactnumber')">
                       * contactnumber is required!!
                     </span>
-                    <span class="text-danger" *ngIf="contactGroup.hasError('required','contactnumber')">
+                    <span class="text-danger" *ngIf="contactGroup.hasError('pattern','contactnumber')">
                       * contactnumber should contain 10 Numbers!!
                     </span>   
                 </div>
@@ -36,7 +36,7 @@
                   <span class="text-danger" *ngIf="contactGroup.controls['message'].touched && contactGroup.hasError('required','message')">
                     * Message is required!!
                   </span>              
-                </div><br><br>  
+                </div><br><br>
                 <div>
                     <button class="button" type="button" [disabled]="!contactGroup.valid" (click)="reloadCurrentPage()" (click)="contactdetails(this.contactGroup.value)" (click)="sendemail(this.contactGroup.value)" (click)="sendmail(this.contactGroup.value)">send Message</button>
                 </div> 

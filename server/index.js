@@ -1,7 +1,6 @@
 const express = require('express');
 const bodypraser = require('body-parser');
 const app = express();
-app.use(express.static("public"));
 const port = 8000;
 const cors =  require('cors');
 const dbconnection  =  require("./database");
@@ -66,10 +65,12 @@ app.post("/add-admin",(request,response) => {
 
     app.post("/addcontentdata",(request,response) => {
       console.log("Hi");
-      console.log(request);
+      console.log(request.body);
       let object = {
         Topic: request.body.Topic,
         message: request.body.message,
+        like:request.body.like,
+        view:request.body.view,
         id: request.body.id,
         rev: request.body.rev,
         type:'addcontentdata'
@@ -203,8 +204,10 @@ app.post("/add-admin",(request,response) => {
       let object = {
         Topic: request.body.Topic,
         message: request.body.message,
-        _id:request.body.id,
-        _rev:request.body.rev,
+        like:request.body.like,
+        view:request.body.view,
+        _id:request.body._id,
+        _rev:request.body._rev,
         type: 'addcontentdata'
       };  
       dbconnection.updatedata(object, 'ad-tracker').then((res) => {

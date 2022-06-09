@@ -7,7 +7,12 @@ import { HttpClient} from '@angular/common/http';
 export class ApiserviceService {
   count=0;
   count1=0;
-  count2=0;  
+  count2=0;
+  count3=0;
+  like=0;
+  like1=0;
+  like2=0;
+  like3=0;  
   constructor(private http: HttpClient) { }
   addadmindata(formObject:any){
     return this.http.post<any>('http://localhost:8000/add-admin',formObject);
@@ -18,7 +23,7 @@ export class ApiserviceService {
   }
   contactdetails(formObject:any){
     console.log(formObject);
-    return this.http.post<any>('http://localhost:8000/contactdetails1',formObject);
+    return this.http.post<any>('http://localhost:8000/contactdetails',formObject);
   }
 
   addcontentdata(formObject:any){

@@ -4,10 +4,10 @@
       <th>
         <td><button class="btn btn-info btn-lg btn-block " routerLink="/add"><h3>Add Content</h3></button></td>
         <td><button class="btn btn-success btn-lg btn-block " routerLink="/signup"><h3>Add Admin</h3></button></td>
-        <tr>
+        <tr style="color: white;">
           <td><h3>Topic</h3></td>
           <td><h3>Message</h3></td>
-          <td><h3>Options</h3></td>
+          <td><h3 style="text-align: right;">Options</h3></td>
         </tr>
         <tr *ngFor="let obj of object" style="color: white;" >
             <td><h1>{{obj.Topic}}</h1></td>
@@ -37,7 +37,7 @@
               </div> 
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary btn-lg" (click)="update(EditGroup.value)">Save changes</button>
+                <button type="button" class="btn btn-primary btn-lg" (click)="update(EditGroup.value)"  aria-hidden="false">Save changes</button>
               </div>               
             </form> 
           </div>
@@ -47,18 +47,18 @@
   <table> 
       <caption></caption>
       <th>
-        <tr>
+        <tr style="color: white;">
           <td><h3>Name</h3></td>
           <td><h3>Contact Number</h3></td>
           <td><h3>Email</h3></td>
           <td><h3>Message</h3></td>
+          <td><h3>Option</h3></td>
         </tr>
         <tr *ngFor="let obj of contact" style="color: white;" >
             <td><h1>{{obj.fname}}</h1></td>
             <td><h3>{{obj.contactnumber}}</h3></td>
             <td><h3>{{obj.email}}</h3></td>
             <td><h3>{{obj.message}}</h3></td>
-            <td><button (click)="editcontent(obj._id,obj._rev)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1"><h3>Reply</h3></button></td>
             <td><button (click)="deletecontact(obj,obj)" class="btn btn-danger"><h3>Delete</h3></button></td>
             <p></p>
         </tr>
@@ -67,16 +67,23 @@
       <caption></caption>
       <th>
         <tr  style="color: white; background-color: rgb(59, 53, 53);">
-          <td>Content</td>
+          <td>Content</td><td></td>
           <td><h3>Televison Tracking</h3></td>
           <td><h3>Tender Tracking</h3></td>
           <td><h3>Social Media Monitoring</h3></td>
         </tr>
         <tr style="color: white;">
           <td><h3>Number Of Views</h3></td>
-          <td><h3>{{this.api.count}}</h3></td>
-          <td><h3>{{this.api.count1}}</h3></td>
-          <td><h3>{{this.api.count2}}</h3></td>
+          <td></td>
+          <td style="text-align: center;"><h3>{{this.api.count}}</h3></td>
+          <td style="text-align: center;"><h3>{{this.api.count1}}</h3></td>
+          <td style="text-align: center;"><h3>{{this.api.count2}}</h3></td>
+        </tr>
+        <tr style="color: white;" >
+          <td><h3>Number Of likes</h3></td><td></td>
+          <td style="text-align: center;"><h3>{{this.api.like}}</h3></td>
+          <td style="text-align: center;"><h3>{{this.api.like1}}</h3></td>
+          <td style="text-align: center;"><h3>{{this.api.like2}}</h3></td>
         </tr>
       </th>
     </table>

@@ -3,12 +3,24 @@
       <h1 class="text-light-dark" >LOGIN</h1>
       <form [formGroup]="loginForm">
         <div class="text_field">
-          <input type="text" required placeholder="Username" formControlName="Username" />
+          <input type="text" required placeholder="Username" formControlName="Username" pattern="^[a-zA-Z]*" />
+                <span class="text-warning" *ngIf="loginForm.controls['Username'].touched && loginForm.hasError('required','Username')">
+                    *User Name is required!!
+                </span>  
+                <span class="text-warning" *ngIf="loginForm.hasError('pattern','Username')">
+                    *User Name should be in Alphabets!!!!
+                </span>
         </div>
         <div class="text_field">
-          <input type="password" required placeholder="Password" formControlName="password" />
+          <input type="password" required placeholder="Password" formControlName="password" pattern="[A-Za-z0-9@!_]{4,}" />
+          <span class="text-warning" *ngIf="loginForm.controls['password'].touched && loginForm.hasError('required','password')">
+            *Password is required!!!!
+          </span>  
+          <span class="text-warning" *ngIf="loginForm.hasError('pattern','password')">
+            *password should contain atleast 4 characters!!!
+          </span> 
         </div>
-        <input type="submit" [disabled]="!loginForm.valid" (click)="alogin(this.loginForm.value)"  value="Login" />
+        <input type="submit"  (click)="alogin(this.loginForm.value)"  value="Login" />
       </form>
     </div><br><br>
    <section id="footer">
