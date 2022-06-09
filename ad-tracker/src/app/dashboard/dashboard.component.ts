@@ -8,7 +8,7 @@ import{ToastrService} from 'ngx-toastr';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  countdisplay = this.api.count;
   AddGroup!:FormGroup;
   value:boolean=true;
   object:any =[];
@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit {
   replyGroup!:FormGroup;
   
 
-  constructor(private api:ApiserviceService, private fb:FormBuilder,private toastr:ToastrService) { }
+  constructor(public api:ApiserviceService, private fb:FormBuilder,private toastr:ToastrService) { }
 
   ngOnInit(): void {
     this.EditGroup = this.fb.group({

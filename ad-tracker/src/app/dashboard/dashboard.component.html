@@ -1,10 +1,9 @@
 <body>
     <table> 
-      <caption></caption>
+      <caption></caption>        
       <th>
         <td><button class="btn btn-info btn-lg btn-block " routerLink="/add"><h3>Add Content</h3></button></td>
         <td><button class="btn btn-success btn-lg btn-block " routerLink="/signup"><h3>Add Admin</h3></button></td>
-        <td><button class="btn btn-success btn-lg btn-block " routerLink="/signup"><h3>Admin Details</h3></button></td>
         <tr>
           <td><h3>Topic</h3></td>
           <td><h3>Message</h3></td>
@@ -61,14 +60,34 @@
             <td><h3>{{obj.message}}</h3></td>
             <td><button (click)="editcontent(obj._id,obj._rev)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1"><h3>Reply</h3></button></td>
             <td><button (click)="deletecontact(obj,obj)" class="btn btn-danger"><h3>Delete</h3></button></td>
+            <p></p>
         </tr>
-    </table><div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    </table>
+    <table>
+      <caption></caption>
+      <th>
+        <tr  style="color: white; background-color: rgb(59, 53, 53);">
+          <td>Content</td>
+          <td><h3>Televison Tracking</h3></td>
+          <td><h3>Tender Tracking</h3></td>
+          <td><h3>Social Media Monitoring</h3></td>
+        </tr>
+        <tr style="color: white;">
+          <td><h3>Number Of Views</h3></td>
+          <td><h3>{{this.api.count}}</h3></td>
+          <td><h3>{{this.api.count1}}</h3></td>
+          <td><h3>{{this.api.count2}}</h3></td>
+        </tr>
+      </th>
+    </table>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
+          
           <div class="modal-body">
             <form>
               <div  [formGroup]="replyGroup">
@@ -87,6 +106,7 @@
               </div>               
             </form> 
           </div>
+          
 
 
 

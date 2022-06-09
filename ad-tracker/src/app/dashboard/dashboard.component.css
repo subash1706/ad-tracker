@@ -12,6 +12,9 @@ button h3{
   border: transparent;
   border-radius: 6px;
 } 
+
+  
+
 th{
   font-size: 20px;
 } 
@@ -23,8 +26,11 @@ h2{
     margin-left: 485px;
     margin-top: 40px;
 }
-tr{
+.heading{
   color: white;
+  width:100%;
+  border: 2px solid wheat;
+  background-color:#c97171 ;
 }
 
 tr:nth-child(even) {background-color: #c97171;}

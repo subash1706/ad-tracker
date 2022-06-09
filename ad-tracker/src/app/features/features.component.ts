@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiserviceService } from '../apiservice.service';
 
 @Component({
   selector: 'app-features',
@@ -6,11 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./features.component.css']
 })
 export class FeaturesComponent implements OnInit {
+  
+  constructor(public api:ApiserviceService) { 
 
-  constructor() { 
-    //Featured//
   }
-
+    count(){
+      this.api.count++;
+      console.log(this.api.count);
+    }
+    count1(){
+      this.api.count1++;
+      console.log(this.api.count1);
+    }
+    count2(){
+      this.api.count2++;
+      console.log(this.api.count2);
+    }
+ 
   ngOnInit(): void {
     console.log();
   }

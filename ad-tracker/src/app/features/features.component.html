@@ -7,7 +7,8 @@
       <div class="all-projects">
           <div class="project-item">
           <div class="project-info">
-            <h1><a [routerLink]="['/ppctracking']">TELEVISION TRACKING</a></h1>
+            <h1><a [routerLink]="['/ppctracking']" (click)="count()">TELEVISION TRACKING</a></h1><br>
+            <h1 class="icon" >👁‍🗨{{this.api.count}}</h1>
           </div>
           <div class="project-img">
             <img src="../../assets/television tracking.png" alt=" img ">
@@ -15,7 +16,8 @@
         </div>
         <div class="project-item">
           <div class="project-info">
-            <h1><a [routerLink]="['/pixeltracking']">TENDER TRACKING</a></h1>
+            <h1><a [routerLink]="['/pixeltracking']"(click)="count1()">TENDER TRACKING</a></h1>
+            <h1 class="icon" >👁‍🗨{{this.api.count1}}</h1>
           </div>
           <div class="project-img">
             <img src="../../assets/tender tracking.png" alt=" img ">
@@ -23,7 +25,8 @@
         </div>
         <div class="project-item">
           <div class="project-info">
-            <h1><a [routerLink]="['/postbacktracking']">SOCIAL MEDIA MONTORING </a></h1>
+            <h1><a [routerLink]="['/postbacktracking']"(click)="count2()">SOCIAL MEDIA MONTORING </a></h1>
+            <h1 class="icon" >👁‍🗨{{this.api.count2}}</h1>
           </div>
           <div class="project-img">
             <img src="../../assets/Media-Monitoring.jpg" alt=" img ">

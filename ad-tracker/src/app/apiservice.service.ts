@@ -5,7 +5,9 @@ import { HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApiserviceService {
-
+  count=0;
+  count1=0;
+  count2=0;  
   constructor(private http: HttpClient) { }
   addadmindata(formObject:any){
     return this.http.post<any>('http://localhost:8000/add-admin',formObject);

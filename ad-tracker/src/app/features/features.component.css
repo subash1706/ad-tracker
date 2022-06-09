@@ -1,6 +1,11 @@
 .bag{
     background-color: rgb(23, 23, 65);
   }
+.icon{
+  margin-left: 70%;
+  margin-top: 65%;
+  cursor: pointer;
+}
   #footer {
     background-image: linear-gradient(60deg, #0b0b0c 100%, #485563 0%);
   }
