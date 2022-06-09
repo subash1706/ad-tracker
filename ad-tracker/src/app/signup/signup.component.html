@@ -3,15 +3,21 @@
         <h1 class="section1" style="color: rgb(90, 90, 248);">New Admin</h1>
         <form class="section1" [formGroup]="signup" >
             <div class="text_field">
-                <input for="fname" class="form-control" formControlName="fname" type="text" placeholder="First Name(User Name)"/> 
+                <input for="fname" class="form-control" formControlName="fname" type="text" pattern="^[a-zA-Z]*" placeholder="First Name(User Name)"/> 
                 <span class="text-danger" *ngIf="signup.controls['fname'].touched && signup.hasError('required','fname')">
                     *First Name is required!!
-                </span>   
+                </span>  
+                <span class="text-danger" *ngIf="signup.hasError('pattern','fname')">
+                    *First Name should be in Alphabets!!!!
+                </span>  
             </div>
             <div class="text_field">
-                <input for="lname" class="form-control" formControlName="lname" type="text" placeholder="Last Name"/> 
+                <input for="lname" class="form-control" formControlName="lname" type="text" pattern="^[a-zA-Z]*" placeholder="Last Name"/> 
                 <span class="text-danger" *ngIf="signup.controls['lname'].touched && signup.hasError('required','lname')">
                     *Last Name is required!!
+                </span>
+                <span class="text-danger" *ngIf="signup.hasError('pattern','lname')">
+                    *Last Name should be in Alphabets!!!!!!!!
                 </span>   
             </div>
             <div class="text_field">
