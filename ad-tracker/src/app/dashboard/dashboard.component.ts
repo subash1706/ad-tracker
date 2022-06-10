@@ -25,6 +25,8 @@ export class DashboardComponent implements OnInit {
   EditGroup!:FormGroup;
   contactdata:any=[];
   replyGroup!:FormGroup;
+  createObj:any;
+
   
   
 
@@ -35,7 +37,9 @@ export class DashboardComponent implements OnInit {
       Topic:['',Validators.required],
       message:['',Validators.required],
       id:['',Validators.required],
-      rev:['',Validators.required]
+      rev:['',Validators.required],
+      view:[''],
+      like:[]
     })
     this.get();
         this.api.getcontact().subscribe(data=>{
@@ -71,7 +75,7 @@ export class DashboardComponent implements OnInit {
 
   editcontent(data2:any,data3:any){
     this.id=data2;
-    this.rev=data3;
+    this.rev=data3; 
     this.api.editcontent(data2)
     .subscribe(response => {
       this.editdata=response;
@@ -80,6 +84,8 @@ export class DashboardComponent implements OnInit {
       this.EditGroup.controls['message'].setValue(this.editdata.message);
       this.EditGroup.controls['id'].setValue(this.editdata._id);
       this.EditGroup.controls['rev'].setValue(this.editdata._rev);
+      this.EditGroup.controls['view'].setValue(this.editdata.view);
+      this.EditGroup.controls['like'].setValue(this.editdata.like);
 
     })
 
@@ -88,7 +94,15 @@ export class DashboardComponent implements OnInit {
 
   update(FormValue:any){
     console.log(FormValue);
-    this.api.updatedata(FormValue).subscribe(res=>{
+    this.createObj={
+      Topic:FormValue.Topic,
+      _id:FormValue.id,
+      like:FormValue.like,
+      message:FormValue.message,
+      _rev:FormValue.rev,
+      view:FormValue.view
+    }
+    this.api.updatedata(this.createObj).subscribe(res=>{
       console.log(res);
       console.log("Your data was updated successfully!");
       this.object=[];
@@ -97,7 +111,7 @@ export class DashboardComponent implements OnInit {
     },rej=>{
       console.log("can not update....."+rej);
     })
-    location.reload()
+    // location.reload()
   }
 
 

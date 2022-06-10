@@ -1,3 +1,4 @@
+<app-navlogout></app-navlogout>
 <body>
     <div>
       <table class="table"> 
@@ -75,11 +76,11 @@
               <div  [formGroup]="EditGroup">
                 <div for="Topic" class="form-control">
                   <label class="Topic" >Topic</label><br>
-                  <input type="text" class="text-box" formControlName="Topic"><br>
+                  <input type="text" class="text-box" formControlName="Topic" value="Topic"><br>
                 </div>
                 <div for="message" class="form-control" >
                   <label class="Topic" >Message</label><br>
-                  <textarea rows="8" formControlName="message" class="text-box" type="text"></textarea><br><br>
+                  <textarea rows="8" formControlName="message" class="text-box" type="text" value="message" ></textarea><br><br>
                 </div>
               </div> 
               <div class="modal-footer">
@@ -91,33 +92,4 @@
         </div>
       </div>
     </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>          
-          <div class="modal-body">
-            <form>
-              <div  [formGroup]="replyGroup">
-                <div for="Topic" class="form-control">
-                  <label class="Topic" >Topic</label><br>
-                  <input type="text" class="text-box" formControlName="Topic"><br>
-                </div>
-                <div for="message" class="form-control" >
-                  <label class="Topic" >Message</label><br>
-                  <textarea rows="8" formControlName="message" class="text-box" type="text"></textarea><br><br>
-                </div>
-              </div> 
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary btn-lg" (click)="update(replyGroup.value)">Save changes</button>
-              </div>               
-            </form> 
-          </div>
-          
-
-
-
-
+    

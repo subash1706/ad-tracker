@@ -22,6 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
 import { BlogsComponent } from './blogs/blogs.component';
+import { NavlogoutComponent } from './navlogout/navlogout.component';
+import { NavaddComponent } from './navadd/navadd.component';
 
 
 
@@ -41,7 +43,9 @@ import { BlogsComponent } from './blogs/blogs.component';
     LoginformComponent,
     DashboardComponent,
     AddComponent,
-    BlogsComponent
+    BlogsComponent,
+    NavlogoutComponent,
+    NavaddComponent
   ],
   imports: [
     BrowserModule,

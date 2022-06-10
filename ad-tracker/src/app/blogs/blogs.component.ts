@@ -64,7 +64,7 @@ export class BlogsComponent implements OnInit {
         Topic: like.Topic,
         like: like.like+1,
         message: like.message,
-        view: like.like,
+        view: like.view,
         _id: like._id,
         _rev: like._rev
       }
