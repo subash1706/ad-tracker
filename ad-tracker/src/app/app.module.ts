@@ -21,7 +21,6 @@ import { AddComponent } from './add/add.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
-import { TestComponent } from './test/test.component';
 import { BlogsComponent } from './blogs/blogs.component';
 
 
@@ -42,7 +41,6 @@ import { BlogsComponent } from './blogs/blogs.component';
     LoginformComponent,
     DashboardComponent,
     AddComponent,
-    TestComponent,
     BlogsComponent
   ],
   imports: [

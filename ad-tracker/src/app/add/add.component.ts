@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder,NgForm, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder,Validators } from '@angular/forms';
 import { ApiserviceService } from '../apiservice.service';
 import{ ToastrService} from 'ngx-toastr';
 @Component({
