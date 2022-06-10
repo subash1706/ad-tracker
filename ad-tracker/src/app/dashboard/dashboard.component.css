@@ -1,9 +1,48 @@
-table {
+.table1 {
   border-collapse: collapse;
   width: 65%;
   margin-left: 17%;
   background:transparent;
+  border-style: groove;
 }
+.table{
+  border-collapse: collapse;
+  width: 35%;
+  margin-left: 17%;
+  background:transparent;
+}
+.table1 th{
+  font-size: 20px;
+} 
+.table th, td {
+  text-align: left;
+  padding: 10px;
+}
+.table1 h2{
+    margin-left: 485px;
+    margin-top: 40px;
+}
+.table2{
+  width: 65%;
+  padding:0px;
+  margin-left: 17%;
+  border-style: groove;
+}
+.table3{
+  width:32%;
+  margin-left: 35%;
+  border-style: groove;
+  padding: 20%;
+}
+.tablename{
+  margin-left: 34.5%; 
+  color:rgb(74, 226, 13);
+  background-color: #0a0a0a;
+}
+.board{
+  padding-block: 3%;
+}
+
 body{
   background-color: rgb(23, 23, 65);
   background-size: cover;
@@ -15,17 +54,7 @@ button h3{
 
   
 
-th{
-  font-size: 20px;
-} 
-th, td {
-  text-align: left;
-  padding: 10px;
-}
-h2{
-    margin-left: 485px;
-    margin-top: 40px;
-}
+
 .heading{
   color: white;
   width:100%;

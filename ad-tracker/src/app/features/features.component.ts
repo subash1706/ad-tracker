@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiserviceService } from '../apiservice.service';
-import { FormGroup} from '@angular/forms';
+
 
 @Component({
   selector: 'app-features',
@@ -8,10 +8,9 @@ import { FormGroup} from '@angular/forms';
   styleUrls: ['./features.component.css']
 })
 export class FeaturesComponent implements OnInit {
-  AddGroup!:FormGroup;
+  
   value:boolean=true;
   object:any =[];
-  adduser!:FormGroup;
   alldata:any;
   isShow: any;
   viewPost:any;
@@ -22,59 +21,9 @@ export class FeaturesComponent implements OnInit {
   }
   ngOnInit(): void {
     console.log();
-    this.object=[];
-    this.get();
   }
-  get(){
-    this.api.getUser().subscribe(data=>{
-      console.log(data);
-      console.log('Data was fetching');
-      this.alldata=data;
-      this.alldata=this.alldata.docs;
-      console.log(this.alldata);
-      for(const i of this.alldata){
-            this.object.push(i);
-            console.log(i);
-            console.log('Fetched successfuly in add component')
-      }
-    });
-  }
-    count(view:any){
-      console.log(view._id);
-      this.viewPost={
-        Topic: view.Topic,
-        like: view.like,
-        message: view.message,
-        view: view.view+1,
-        _id: view._id,
-        _rev: view._rev
-      }
-      console.log(this.viewPost);
-      this.api.updatedata(this.viewPost).subscribe(res=>{
-        console.log("count increase ",res);
-        this.object=[];
-        this.get();
-      })
-      this.api.count++;
-      console.log(this.api.count);
-    }
-    like(like:any){
-      console.log(like._id);
-      this.viewPost={
-        Topic: like.Topic,
-        like: like.like+1,
-        message: like.message,
-        view: like.like,
-        _id: like._id,
-        _rev: like._rev
-      }
-      console.log(this.viewPost);
-      this.api.updatedata(this.viewPost).subscribe(res=>{
-        console.log("count increase ",res);
-        this.object=[];
-        this.get();
-      })
-    }
+  
+    
     count1(){
       this.api.count1++;
       console.log(this.api.count1);

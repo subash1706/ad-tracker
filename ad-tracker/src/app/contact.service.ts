@@ -9,11 +9,11 @@ export class ContactService {
   constructor(private http:HttpClient) { }
   sendemail(formobject:any){
     console.log('hello');
-    return this.http.post('http://localhost:8000/email/',formobject)
+    return this.http.post('http://localhost:8080/email/',formobject)
   }
   sendmail(formobject:any){
     console.log('hi');
-    return this.http.post('http://localhost:8000/mail/',formobject)
+    return this.http.post('http://localhost:8080/mail/',formobject)
   }
 
 

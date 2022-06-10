@@ -1,21 +1,68 @@
 <body>
-    <table> 
-      <caption></caption>        
-      <th>
-        <td><button class="btn btn-info btn-lg btn-block " routerLink="/add"><h3>Add Content</h3></button></td>
-        <td><button class="btn btn-success btn-lg btn-block " routerLink="/signup"><h3>Add Admin</h3></button></td>
-        <tr style="color: white;">
-          <td><h3>Topic</h3></td>
-          <td><h3>Message</h3></td>
-          <td><h3 style="text-align: right;">Options</h3></td>
-        </tr>
-        <tr *ngFor="let obj of object" style="color: white;" >
-            <td><h1>{{obj.Topic}}</h1></td>
-            <td><h3>{{obj.message}}</h3></td>
-            <td><button (click)="editcontent(obj._id,obj._rev)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><h3>Edit</h3></button></td>
-            <td><button (click)="deletecontent(obj,obj)" class="btn btn-danger"><h3>Delete</h3></button></td>
-        </tr>
-    </table>
+    <div>
+      <table class="table"> 
+        <caption></caption>        
+        <th>
+          <td><button class="btn btn-info btn-lg btn-block " routerLink="/add"><h3>Add Content</h3></button></td>      
+      </table>
+    </div>
+    <div class="board">
+      <table class="table1"> 
+        <caption></caption>        
+        <th>
+          <tr style="color: white;">
+            <td><h3>Topic</h3></td>
+            <td><h3>Message</h3></td>
+            <td><h3 style="text-align: right;">Options</h3></td>
+          </tr>
+          <tr *ngFor="let obj of object" style="color: white;" >
+              <td><h1>{{obj.Topic}}</h1></td>
+              <td><h3>{{obj.message}}</h3></td>
+              <td><button (click)="editcontent(obj._id,obj._rev)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><h3>Edit</h3></button></td>
+              <td><button (click)="deletecontent(obj,obj)" class="btn btn-danger"><h3>Delete</h3></button></td>
+          </tr>
+      </table>
+    </div>
+    <div class="board">
+      <table class="table2"> 
+        <caption></caption>
+        <th></th>
+          <tr style="color: white;">
+            <td><h3>Name</h3></td>  
+            <td><h3>Contact Number</h3></td>
+            <td><h3>Email</h3></td>
+            <td><h3>Message</h3></td>
+            <td><h3>Option</h3></td>
+          </tr>
+          <tr *ngFor="let obj of contact" style="color: white;" >
+              <td><h1>{{obj.fname}}</h1></td>
+              <td><h3>{{obj.contactnumber}}</h3></td>
+              <td><h3>{{obj.email}}</h3></td>
+              <td><h3>{{obj.message}}</h3></td>
+              <td><button (click)="deletecontact(obj,obj)" class="btn btn-danger"><h3>Delete</h3></button></td>
+              <p></p>
+          </tr>
+      </table>
+    </div>
+    <div class="board">
+      <h2 class="tablename">Tracking Table</h2>
+      <table class="table3">
+        <caption></caption>
+        <th *ngFor="let obj of object">
+          <tr  style="color: white; background-color: rgb(59, 53, 53);">
+            <td>Content</td>
+            <td><h3>Views</h3></td><td></td>
+            <td><h3>likes</h3></td>
+          </tr>
+          <tr style="color: white;">
+            <td><h3>{{obj.Topic}}</h3></td>
+            <td style="text-align: center;"><h3>{{obj.view}}</h3></td><td></td>
+            <td style="text-align: center;"><h3>{{obj.like}}</h3></td>
+          </tr>
+        </th>
+      </table>
+    </div>
+      
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -44,57 +91,13 @@
         </div>
       </div>
     </div>
-  <table> 
-      <caption></caption>
-      <th>
-        <tr style="color: white;">
-          <td><h3>Name</h3></td>
-          <td><h3>Contact Number</h3></td>
-          <td><h3>Email</h3></td>
-          <td><h3>Message</h3></td>
-          <td><h3>Option</h3></td>
-        </tr>
-        <tr *ngFor="let obj of contact" style="color: white;" >
-            <td><h1>{{obj.fname}}</h1></td>
-            <td><h3>{{obj.contactnumber}}</h3></td>
-            <td><h3>{{obj.email}}</h3></td>
-            <td><h3>{{obj.message}}</h3></td>
-            <td><button (click)="deletecontact(obj,obj)" class="btn btn-danger"><h3>Delete</h3></button></td>
-            <p></p>
-        </tr>
-    </table>
-    <table>
-      <caption></caption>
-      <th>
-        <tr  style="color: white; background-color: rgb(59, 53, 53);">
-          <td>Content</td><td></td>
-          <td><h3>Televison Tracking</h3></td>
-          <td><h3>Tender Tracking</h3></td>
-          <td><h3>Social Media Monitoring</h3></td>
-        </tr>
-        <tr style="color: white;">
-          <td><h3>Number Of Views</h3></td>
-          <td></td>
-          <td style="text-align: center;"><h3>{{this.api.count}}</h3></td>
-          <td style="text-align: center;"><h3>{{this.api.count1}}</h3></td>
-          <td style="text-align: center;"><h3>{{this.api.count2}}</h3></td>
-        </tr>
-        <tr style="color: white;" >
-          <td><h3>Number Of likes</h3></td><td></td>
-          <td style="text-align: center;"><h3>{{this.api.like}}</h3></td>
-          <td style="text-align: center;"><h3>{{this.api.like1}}</h3></td>
-          <td style="text-align: center;"><h3>{{this.api.like2}}</h3></td>
-        </tr>
-      </th>
-    </table>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          
+          </div>          
           <div class="modal-body">
             <form>
               <div  [formGroup]="replyGroup">

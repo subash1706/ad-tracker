@@ -14,6 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddComponent } from './add/add.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { TestComponent } from './test/test.component';
+import { BlogsComponent } from './blogs/blogs.component';
 const routes: Routes = [
   {path:'',component:MainMenuComponent},
   {path:'features',component:FeaturesComponent},
@@ -28,7 +29,8 @@ const routes: Routes = [
   {path:'dashboard',component:DashboardComponent},
   {path:'add',component:AddComponent},
   {path:'navigation',component:NavigationComponent},
-  {path:'test', component:TestComponent}
+  {path:'test', component:TestComponent},
+  {path:'blogs', component:BlogsComponent}
 ]
 
 @NgModule({

@@ -18,25 +18,27 @@ app.get('/', function (response) {
  });
 
  app.post('/email',(request)=>{
- 
+ console.log(request.body);
   let object ={
     fname:request.body.fname,
     email:request.body.email,
     contact_number:request.body.contact_number,
-    Message:request.body.Message
+    Message:request.body.message
   }
   setmail.getemail(request.body.email);
   console.log(object);
+  console.log("mail working");
 })
 app.post('/mail',(request) =>{
   let object ={
     fname:request.body.fname,
     email:request.body.email,
     contact_number:request.body.contact_number,
-    Message:request.body.Message
+    Message:request.body.message
   }
-  setmail.getmail(request.body.Message);
+  setmail.getmail(request.body.message);
   console.log(object);
+  console.log("working")
 })
 
  app.listen(port, (err) => {

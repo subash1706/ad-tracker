@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,FormGroup} from '@angular/forms';
+import { FormBuilder} from '@angular/forms';
 import { ApiserviceService } from '../apiservice.service';
 @Component({
   selector: 'app-main-menu',
@@ -7,26 +7,13 @@ import { ApiserviceService } from '../apiservice.service';
   styleUrls: ['./main-menu.component.css']
 })
 export class MainMenuComponent implements OnInit {
-  AddGroup!:FormGroup;
-  value:boolean=true;
-  object:any =[];
-  adduser!:FormGroup;
-  alldata:any;
 
-  constructor(private fb:FormBuilder,private api:ApiserviceService) { }
+  constructor(private fb:FormBuilder,private api:ApiserviceService) {
+    //main-menu//
+   }
 
   ngOnInit(): void {
-      this.api.getUser().subscribe(data=>{
-        console.log(data);
-        console.log('Data was fetching');
-        this.alldata=data;
-        this.alldata=this.alldata.docs;
-        console.log(this.alldata);
-        for(const i of this.alldata){
-              this.object.push(i);
-              console.log('Fetched successfuly in add component')
-        }
-      });
+      console.log();
     }
   }
   

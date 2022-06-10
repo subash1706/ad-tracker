@@ -5,11 +5,11 @@
         <h1 class="section-title"><span>Features</span></h1>
       </div>
       <div class="all-projects">
-          <!-- <div class="project-item">
+          <div class="project-item">
           <div class="project-info">
-            <h1><a [routerLink]="['/ppctracking']" (click)="count()">TELEVISION TRACKING</a></h1><br>
-            <h2 class="icon" >👁‍🗨{{this.api.count}}</h2>
-            <h1 class="icon" (click)="like()" >👍🏼{{this.api.like}}</h1>
+            <h1><a [routerLink]="['/ppctracking']" (click)="count1()">TELEVISION TRACKING</a></h1><br>
+            <h2 class="icon" >👁‍🗨{{this.api.count1}}</h2>
+            <h1 class="icon" (click)="like1()" >👍🏼{{this.api.like1}}</h1>
           </div>
           <div class="project-img">
             <img src="../../assets/television tracking.png" alt=" img ">
@@ -17,9 +17,9 @@
         </div>
         <div class="project-item">
           <div class="project-info">
-            <h1><a [routerLink]="['/pixeltracking']"(click)="count1()">TENDER TRACKING</a></h1>
-            <h2 class="icon" >👁‍🗨{{this.api.count1}}</h2>
-            <h1 class="icon" (click)="like1()" >👍🏼{{this.api.like1}}</h1>
+            <h1><a [routerLink]="['/pixeltracking']"(click)="count2()">TENDER TRACKING</a></h1>
+            <h2 class="icon" >👁‍🗨{{this.api.count2}}</h2>
+            <h1 class="icon" (click)="like2()" >👍🏼{{this.api.like2}}</h1>
           </div>
           <div class="project-img">
             <img src="../../assets/tender tracking.png" alt=" img ">
@@ -27,26 +27,15 @@
         </div>
         <div class="project-item">
           <div class="project-info">
-            <h1><a [routerLink]="['/postbacktracking']"(click)="count2()">SOCIAL MEDIA MONTORING </a></h1>
-            <h2 class="icon" >👁‍🗨{{this.api.count2}}</h2>
-            <h1 class="icon" (click)="like2()" >👍🏼{{this.api.like2}}</h1>
+            <h1><a [routerLink]="['/postbacktracking']"(click)="count3()">SOCIAL MEDIA MONTORING </a></h1>
+            <h2 class="icon" >👁‍🗨{{this.api.count3}}</h2>
+            <h1 class="icon" (click)="like3()" >👍🏼{{this.api.like3}}</h1>
           </div>
           <div class="project-img">
             <img src="../../assets/Media-Monitoring.jpg" alt=" img ">
           </div>
-        </div> -->
-        <div class="project-item" *ngFor="let obj of object">
-          <div class="project-info" >
-            <h1><a style="color: wheat;">{{obj.Topic}}</a></h1>
-            <h2 class="icon">👁‍🗨{{obj.view}}</h2>
-            <h1 class="icon" (click)="like(obj)" >👍🏼{{obj.like}}</h1>
-          </div>
-          <div class="project-info" >
-            <div><button class="glow-on-hover" (click)="count(obj)" (click)="previousWeekData()">Learn more</button></div>
-            <h3 *ngIf = "isShow">{{obj.message}}</h3>
-          </div>
         </div>
-    </div>   
+      </div>   
   </div>
 
 <section id="footer">
@@ -66,6 +55,9 @@
       </div>
       <div class="social-item">
         <a href="#"><img src="https://img.icons8.com/nolan/64/linkedin.png" alt="linkedin"/></a>
+      </div>
+      <div class="social-item">
+        <a ><img src="https://img.icons8.com/nolan/64/google-plus.png" alt="linkedin" routerLink="contact" /></a>
       </div>
     </div>
     <p>Copyright © 2022. All rights reserved</p>
