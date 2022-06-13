@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+app.disable("x-powered-by");
 const port = 8080;
 const cors = require('cors');
 const setmail = require('./sending');

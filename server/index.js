@@ -1,12 +1,12 @@
 const express = require('express');
 const bodypraser = require('body-parser');
 const app = express();
+app.disable("x-powered-by");
 const port = 8000;
 const setmail = require('./sending');
 const cors =  require('cors');
 const dbconnection  =  require("./database");
 app.use(bodypraser.json());
-app.use(express.static("public"));
 app.use(
     cors({
         origin: "http://localhost:4200",
