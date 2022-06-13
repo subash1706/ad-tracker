@@ -29,5 +29,5 @@ We track information about coverage of your Press Releases, New Business Opportu
      
 ### Project Flow:
       
-     * User enters the website  --> you can see the features of the website by clicking in it 
+     * User enters the website  --> we can see the features of the website on features navigation bar --> In Blogs we can view the posts which is posted and updated by the admin of the website and we can also see the number of views and likes for each content --> we can also contact the admin by using the contact Us form which contains the field of name, contact number, email and the message where we can communicate with through the mail received from the website mail-id --> login options enables the admin to enter into the admin dashboard where the admin can add, edit and delete the content of the blogs and also can view the number of likes and views for the content as same as in the blogs.      
        
