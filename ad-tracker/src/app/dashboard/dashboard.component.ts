@@ -93,8 +93,8 @@ export class DashboardComponent implements OnInit {
       message:FormValue.message,
       _rev:FormValue.rev,
       view:FormValue.view
-    }
-    this.api.updateData(this.createObj).subscribe(res=>{
+    } 
+    this.api.updateData(this.createObj).subscribe(_res=>{
       console.log("Your data was updated successfully!");
       this.object=[];
       this.get();
@@ -117,7 +117,7 @@ export class DashboardComponent implements OnInit {
     })
   }
   deletecontact(data:any,data1:any){
-    this.api.deleteContact(data._id,data1._rev).subscribe(_response=>{
+    this.api.deleteContact(data._id,data1._rev).subscribe(_response => {
       this.toastr.success("Done","Content deleted successfully");
       setInterval(()=>{
         location.reload()
