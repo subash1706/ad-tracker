@@ -5,14 +5,4 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './ppctracking.component.html',
   styleUrls: ['./ppctracking.component.css']
 })
-export class PpctrackingComponent implements OnInit {
-
-  constructor() {
-    //ppc tracking//
-   }
-
-  ngOnInit(): void {
-     //ppc tracking//
-  }
-
-}
+export class PpctrackingComponent { }

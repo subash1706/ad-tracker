@@ -7,23 +7,15 @@ import { ApiserviceService } from '../apiservice.service';
   templateUrl: './features.component.html',
   styleUrls: ['./features.component.css']
 })
-export class FeaturesComponent implements OnInit {
-  
+export class FeaturesComponent {  
   value:boolean=true;
   object:any =[];
   alldata:any;
   isShow: any;
   viewPost:any;
-  likePost:any;
-  
-  constructor(public api:ApiserviceService) { 
-
-  }
-  ngOnInit(): void {
-    //features//
-  }
-  
-    
+  likePost:any;  
+  constructor(public api:ApiserviceService) { }
+   
     count1(){
       this.api.count1++;
     }

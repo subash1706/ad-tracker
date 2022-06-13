@@ -39,10 +39,8 @@ export class ContactFormComponent implements OnInit {
     reloadCurrentPage() {
       setTimeout(() => {
         window.location.reload();
-      }, 1000);
-      
+      }, 1000);      
      }
-
      contactdetails(Formvalue:NgForm){
        this.api.contactDetails(Formvalue).subscribe((_data)=>{
          this.toastr.success('Success',"Contact Details Added ");

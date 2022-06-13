@@ -6,15 +6,11 @@ import { ApiserviceService } from '../apiservice.service';
   templateUrl: './main-menu.component.html',
   styleUrls: ['./main-menu.component.css']
 })
-export class MainMenuComponent implements OnInit {
+export class MainMenuComponent {
 
   constructor(private fb:FormBuilder,private api:ApiserviceService) {
     //main-menu//
    }
-
-  ngOnInit(): void {
-      //mainmenu//
-    }
   }
   
 

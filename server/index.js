@@ -25,11 +25,9 @@ app.use(
       };
       dbconnection.insert(object).then(
           (res) => {
-            console.log("Contact data posted");
             response.send(res);
           },
           (rej) => {
-            console.log("Contact data cant posted");
             response.send(rej);
           }
         );
@@ -49,12 +47,9 @@ app.use(
       };
       dbconnection.insert(object).then(
           (req) => {
-            console.log("content added ");
             response.send(req);
-
           },
           (res) => {
-            console.log("content cannot be added");
             response.send(res);
           }
         )
@@ -63,11 +58,18 @@ app.use(
 //--------Getting Id for editing content------// 
 
       app.get("/editContent/:id",(request,response) => {
-        dbconnection.edit(request.params.id,"ad-tracker").then(
+        if(request.params.id==undefined){
+          response.send("id is undefined");
+        }else{
+          dbconnection.edit(request.params.id,"ad-tracker").then(
             (res) => {
               response.send(res);
             }
-          )
+          ).catch(rej=>{
+            response.send(rej);
+          })
+        }
+        
       });
 
 //-------Getting content data---------//
@@ -80,12 +82,9 @@ app.use(
         };
         dbconnection.get(data,"ad-tracker").then((res) => {
           if (res) {
-            console.log("process success")
-            response.send(res);
-            
+            response.send(res);            
           } else {
-            console.log("process failed")
-          }
+            response.send('error');          }
         });
       });
       
@@ -98,12 +97,9 @@ app.use(
         };
         dbconnection.get(data,"ad-tracker").then((res) => {
           if (res) {
-            console.log("success")
-            response.send(res);
-            
+            response.send(res);            
           } else {
-            console.log("failed")
-          }
+            response.send('error');          }
         });
       });
 
@@ -142,12 +138,9 @@ app.use(
         };
         dbconnection.get(data,"ad-tracker").then((response) => {
           if (response) {
-            console.log("process success")
-            _response.send(response);
-            
+            _response.send(response);            
           } else {
-            console.log("process failed")
-          }
+            response.send('error');          }
         });
       });
 
@@ -165,22 +158,18 @@ app.use(
       };  
       dbconnection.updatedata(object, 'ad-tracker').then((res) => {
         if (res) {
-          console.log('updated....');
           response.send(res);
         } else {
-          console.log('can not updated....');
           response.send('error');
         }
       });
     });
 
-//----------------------//
-    
+//----------------------//    
     app.listen(port, (err) => {
       if (err) {
         return console.log("something bad happened", err);
-      }
-    
+      }    
       console.log(`server is listening on http://localhost:${port}`);
     });
 

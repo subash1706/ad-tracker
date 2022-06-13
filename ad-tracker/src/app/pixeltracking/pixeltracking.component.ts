@@ -5,15 +5,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './pixeltracking.component.html',
   styleUrls: ['./pixeltracking.component.css']
 })
-export class PixeltrackingComponent implements OnInit {
-
-  constructor() { 
-    //pixel tracking//
-
-  }
-
-  ngOnInit(): void {
-   //pixeltravking//
-  }
+export class PixeltrackingComponent {
 
 }

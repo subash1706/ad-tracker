@@ -5,14 +5,4 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './postbacktracking.component.html',
   styleUrls: ['./postbacktracking.component.css']
 })
-export class PostbacktrackingComponent implements OnInit {
-
-  constructor() {
-    //postback//
-   }
-
-  ngOnInit(): void {
-    //post back//
-  }
-
-}
+export class PostbacktrackingComponent { }

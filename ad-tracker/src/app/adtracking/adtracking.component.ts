@@ -5,14 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './adtracking.component.html',
   styleUrls: ['./adtracking.component.css']
 })
-export class AdtrackingComponent implements OnInit {
+export class AdtrackingComponent{
 
-  constructor() {
-    //adtracking//
-   }
-
-  ngOnInit(): void {
- //adtracking//
-  }
-
+ 
 }

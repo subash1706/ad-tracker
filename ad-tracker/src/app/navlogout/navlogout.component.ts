@@ -5,8 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './navlogout.component.html',
   styleUrls: ['./navlogout.component.css']
 })
-export class NavlogoutComponent {
-
-
-
-}
+export class NavlogoutComponent {}

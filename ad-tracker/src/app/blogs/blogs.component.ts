@@ -26,12 +26,10 @@ export class BlogsComponent implements OnInit {
   }
   get(){
     this.api.getUser().subscribe(data=>{
-      console.log('Data was fetching');
       this.alldata=data;
       this.alldata=this.alldata.docs;
       for(const i of this.alldata){
             this.object.push(i);
-            console.log('Fetched successfuly in add component')
       }
     });
   }
@@ -44,8 +42,7 @@ export class BlogsComponent implements OnInit {
         _id: view._id,
         _rev: view._rev
       }
-      this.api.updateData(this.viewPost).subscribe(res=>{
-        console.log("count increase ",res);
+      this.api.updateData(this.viewPost).subscribe(_res=>{
         this.object=[];
         this.get();
       })
@@ -64,26 +61,6 @@ export class BlogsComponent implements OnInit {
         this.object=[];
         this.get();
       })
-    }
-    count1(){
-      this.api.count1++;
-    }
-    count2(){
-      this.api.count2++;
-    }
-    count3(){
-      this.api.count3++;
-    }
-
-    
-    like1(){
-      this.api.like1++;
-    }
-    like2(){
-      this.api.like2++;
-    }
-    like3(){
-      this.api.like3++;
     }
     previousData(){
       this.isShow = !this.isShow; 

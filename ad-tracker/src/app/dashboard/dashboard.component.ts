@@ -25,10 +25,7 @@ export class DashboardComponent implements OnInit {
   EditGroup!:FormGroup;
   contactdata:any=[];
   replyGroup!:FormGroup;
-  createObj:any;
-
-  
-  
+  createObj:any;  
 
   constructor(public api:ApiserviceService, private fb:FormBuilder,private toastr:ToastrService) { }
 
@@ -43,28 +40,21 @@ export class DashboardComponent implements OnInit {
     })
     this.get();
         this.api.getContact().subscribe(data=>{
-      console.log('Data was fetching');
       this.contactdata=data;
       this.contactdata=this.contactdata.docs;
       for(const obj of this.contactdata){
             this.contact.push(obj);
-            console.log('Fetched successfuly in add component')
       }
-    });
-  
+    });  
   }
-
   get(){
     this.api.getUser().subscribe(data=>{
-      console.log('Data was fetching');
       this.alldata=data;
       this.alldata=this.alldata.docs;
       for(const obj of this.alldata){
             this.object.push(obj);
-            console.log('Fetched successfuly in add component')
       }
     });
-
   }
 
   editcontent(data2:any,data3:any){
@@ -79,9 +69,7 @@ export class DashboardComponent implements OnInit {
       this.EditGroup.controls['rev'].setValue(this.editdata._rev);
       this.EditGroup.controls['view'].setValue(this.editdata.view);
       this.EditGroup.controls['like'].setValue(this.editdata.like);
-
-    })
-
+    });
   }
 
 
@@ -95,12 +83,10 @@ export class DashboardComponent implements OnInit {
       view:FormValue.view
     } 
     this.api.updateData(this.createObj).subscribe(_res=>{
-      console.log("Your data was updated successfully!");
       this.object=[];
       this.get();
-      alert('your data was Updated successfully');
     },rej=>{
-      console.log("can not update....."+rej);
+      this.toastr.error('Error',"can not update"+rej);
     })
     
   }
