@@ -11,7 +11,7 @@ module.exports.getemail=function(params)
 let composemail = {
     from:'adtracker6@gmail.com',
     to:params,
-    subject:`Message`,
+    subject:'Welcome to Track Spot',
     text:'Thank you for contacting us!'
     
 }
