@@ -14,10 +14,6 @@ export class ApiserviceService {
   like2=0;
   like3=0;  
   constructor(private http: HttpClient) { }
-  addAdminData(formObject:any){
-    return this.http.post<any>('http://localhost:8000/add-Admin',formObject);
-  }
-  
   loginForm(){
     return this.http.get('http://localhost:8000/loginForm');
   }

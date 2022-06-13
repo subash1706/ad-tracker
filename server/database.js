@@ -5,10 +5,7 @@ const password = "ff4e6d701676a004128c9bdb601b52d2";
 
  const cloudant = Cloudant ({ url: url, username:username, password: password});
 
- let insert = function(paramsvalue){
-    return cloudant.use("ad-tracker").insert(paramsvalue);
-}
-insert = function(paramsvalue1){
+let insert = function(paramsvalue1){
   return cloudant.use("ad-tracker").insert(paramsvalue1);
 }
 insert = function(paramsvalue){

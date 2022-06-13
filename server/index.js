@@ -13,30 +13,6 @@ app.use(
     })   
 );
 
-//--------Adding New Admin------//
-
-app.post("/add-Admin",(request,response) => {
-    let object = {
-        fname: request.body.fname,
-        lname: request.body.lname,
-        email: request.body.email,
-        password: request.body.password,
-        confirm_password: request.body.confirm_password,
-        contact_number: request.body.contact_number,
-        type:'signupData'
-    };
-    dbconnection.insert(object).then(
-        (res) => {
-          console.log("data posted");
-          response.send(res);
-        },
-        (rej) => {
-          console.log("data cant posted");
-          response.send(rej);
-        }
-      );
-    })
-
 //--------------posting contact details---------------//
 
     app.post("/contactDetails",(request,response) => {
@@ -87,12 +63,6 @@ app.post("/add-Admin",(request,response) => {
 //--------Getting Id for editing content------// 
 
       app.get("/editContent/:id",(request,response) => {
-        let object={
-          selector:{
-            id: request.params.id,
-            type:"addcontentdata"
-          }          
-        };
         dbconnection.edit(request.params.id,"ad-tracker").then(
             (res) => {
               response.send(res);
@@ -217,24 +187,11 @@ app.post("/add-Admin",(request,response) => {
 //-------------sending Email to User------- //
 
     app.post('/email',(request)=>{
- 
-      let object ={
-        fname:request.body.fname,
-        email:request.body.email,
-        contact_number:request.body.contact_number,
-        Message:request.body.Message
-      }
       setmail.getemail(request.body.email);
     })
 //-----------sending Email to admin--------//
 
     app.post('/mail',(request) =>{
-      let object ={
-        fname:request.body.fname,
-        email:request.body.email,
-        contact_number:request.body.contact_number,
-        Message:request.body.Message
-      }
       setmail.getmail(request.body.Message);
     })
     
