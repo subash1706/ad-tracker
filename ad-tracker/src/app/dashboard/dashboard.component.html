@@ -14,11 +14,14 @@
           <tr style="color: white;">
             <td><h3>Topic</h3></td>
             <td><h3>Message</h3></td>
-            <td><h3 style="text-align: right;">Options</h3></td>
+            <td><h3>views</h3></td>
+            <td><h3>likes</h3></td>
           </tr>
           <tr *ngFor="let obj of object" style="color: white;" >
               <td><h1>{{obj.Topic}}</h1></td>
               <td><h3>{{obj.message}}</h3></td>
+              <td style="text-align: center;"><h3>{{obj.view}}</h3></td>
+              <td style="text-align: center;"><h3>{{obj.like}}</h3></td>
               <td><button (click)="editcontent(obj._id,obj._rev)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><h3>Edit</h3></button></td>
               <td><button (click)="deletecontent(obj,obj)" class="btn btn-danger"><h3>Delete</h3></button></td>
           </tr>
@@ -43,24 +46,6 @@
               <td><button (click)="deletecontact(obj,obj)" class="btn btn-danger"><h3>Delete</h3></button></td>
               <p></p>
           </tr>
-      </table>
-    </div>
-    <div class="board">
-      <h2 class="tablename">Tracking Table</h2>
-      <table class="table3">
-        <caption></caption>
-        <th *ngFor="let obj of object">
-          <tr  style="color: white; background-color: rgb(59, 53, 53);">
-            <td>Content</td>
-            <td><h3>Views</h3></td><td></td>
-            <td><h3>likes</h3></td>
-          </tr>
-          <tr style="color: white;">
-            <td><h3>{{obj.Topic}}</h3></td>
-            <td style="text-align: center;"><h3>{{obj.view}}</h3></td><td></td>
-            <td style="text-align: center;"><h3>{{obj.like}}</h3></td>
-          </tr>
-        </th>
       </table>
     </div>
       
