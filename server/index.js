@@ -156,9 +156,9 @@ app.use(
         _rev:request.body._rev,
         type: 'addcontentdata'
       };  
-      dbconnection.updatedata(object, 'ad-tracker').then((res) => {
-        if (res) {
-          response.send(res);
+      dbconnection.updatedata(object, 'ad-tracker').then((res2) => {
+        if (res2) {
+          response.send(res2);
         } else {
           response.send('error');
         }
