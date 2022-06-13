@@ -5,19 +5,19 @@
       <form [formGroup]="loginForm">
         <div class="text_field">
           <input type="text" required placeholder="Username" formControlName="Username" pattern="^[a-zA-Z]*" />
-                <span class="text-warning" *ngIf="loginForm.controls['Username'].touched && loginForm.hasError('required','Username')">
+                <span class="text-danger" *ngIf="loginForm.controls['Username'].touched && loginForm.hasError('required','Username')">
                     *User Name is required!!
                 </span>  
-                <span class="text-warning" *ngIf="loginForm.hasError('pattern','Username')">
+                <span class="text-danger" *ngIf="loginForm.hasError('pattern','Username')">
                     *User Name should be in Alphabets!!!!
                 </span>
         </div>
         <div class="text_field">
           <input type="password" required placeholder="Password" formControlName="password" pattern="[A-Za-z0-9@!_]{4,}" />
-          <span class="text-warning" *ngIf="loginForm.controls['password'].touched && loginForm.hasError('required','password')">
+          <span class="text-danger" *ngIf="loginForm.controls['password'].touched && loginForm.hasError('required','password')">
             *Password is required!!!!
           </span>  
-          <span class="text-warning" *ngIf="loginForm.hasError('pattern','password')">
+          <span class="text-danger" *ngIf="loginForm.hasError('pattern','password')">
             *password should contain atleast 4 characters!!!
           </span> 
         </div>
