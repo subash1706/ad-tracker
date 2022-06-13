@@ -95,9 +95,9 @@ app.use(
             type:"Contactdata",
           },
         };
-        dbconnection.get(data,"ad-tracker").then((res) => {
-          if (res) {
-            response.send(res);            
+        dbconnection.get(data,"ad-tracker").then((res1) => {
+          if (res1) {
+            response.send(res1);            
           } else {
             response.send('error');          }
         });
