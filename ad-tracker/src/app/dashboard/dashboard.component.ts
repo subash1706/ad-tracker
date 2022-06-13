@@ -42,7 +42,7 @@ export class DashboardComponent implements OnInit {
       like:[]
     })
     this.get();
-        this.api.getcontact().subscribe(data=>{
+        this.api.getContact().subscribe(data=>{
       console.log(data);
       console.log('Data was fetching');
       this.contactdata=data;
@@ -76,7 +76,7 @@ export class DashboardComponent implements OnInit {
   editcontent(data2:any,data3:any){
     this.id=data2;
     this.rev=data3; 
-    this.api.editcontent(data2)
+    this.api.editContent(data2)
     .subscribe(response => {
       this.editdata=response;
       console.log(this.editdata);
@@ -102,7 +102,7 @@ export class DashboardComponent implements OnInit {
       _rev:FormValue.rev,
       view:FormValue.view
     }
-    this.api.updatedata(this.createObj).subscribe(res=>{
+    this.api.updateData(this.createObj).subscribe(res=>{
       console.log(res);
       console.log("Your data was updated successfully!");
       this.object=[];
@@ -116,13 +116,13 @@ export class DashboardComponent implements OnInit {
 
 
   deletecontent(data:any,data1:any){
-    this.api.deletecontenttopicmessage(data._id,data1._rev).subscribe(_res=>{
+    this.api.deleteContentTopicMessage(data._id,data1._rev).subscribe(_res=>{
       this.toastr.success("Done","Content deleted successfully");
       location.reload()
     })
   }
   deletecontact(data:any,data1:any){
-    this.api.deletecontact(data._id,data1._rev).subscribe(_res=>{
+    this.api.deleteContact(data._id,data1._rev).subscribe(_res=>{
       this.toastr.success("Done","Content deleted successfully");
       location.reload()
     })

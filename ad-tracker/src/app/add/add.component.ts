@@ -37,7 +37,7 @@ export class AddComponent implements OnInit {
       view:0
     }
     console.log(this.formObj);
-    this.api.addcontentdata(this.formObj).subscribe((_data)=>{
+    this.api.addContentData(this.formObj).subscribe((_data)=>{
       this.toastr.success("success","Content added Successfully")
       this.AddGroup.reset();
     },rej=>{

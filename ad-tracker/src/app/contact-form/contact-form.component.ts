@@ -49,7 +49,7 @@ export class ContactFormComponent implements OnInit {
 
      contactdetails(Formvalue:NgForm){
       console.log(Formvalue);
-       this.api.contactdetails(Formvalue).subscribe((data)=>{
+       this.api.contactDetails(Formvalue).subscribe((data)=>{
          console.log(data);
          this.toastr.success('Success',"Contact Details Added ");
        },rej=>{

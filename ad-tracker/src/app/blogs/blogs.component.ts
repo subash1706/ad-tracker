@@ -50,7 +50,7 @@ export class BlogsComponent implements OnInit {
         _rev: view._rev
       }
       console.log(this.viewPost);
-      this.api.updatedata(this.viewPost).subscribe(res=>{
+      this.api.updateData(this.viewPost).subscribe(res=>{
         console.log("count increase ",res);
         this.object=[];
         this.get();
@@ -69,7 +69,7 @@ export class BlogsComponent implements OnInit {
         _rev: like._rev
       }
       console.log(this.viewPost);
-      this.api.updatedata(this.viewPost).subscribe(response=>{
+      this.api.updateData(this.viewPost).subscribe(response=>{
         console.log("count increase ",response);
         this.object=[];
         this.get();
@@ -100,9 +100,5 @@ export class BlogsComponent implements OnInit {
     like3(){
       this.api.like3++;
       console.log(this.api.like3);
-    }
-    previousWeekData(){
-      console.log("Previous Button Clicked");
-      this.isShow = !this.isShow; 
     }
 }

@@ -15,7 +15,7 @@ app.use(
 
 //--------Adding New Admin------//
 
-app.post("/add-admin",(request,response) => {
+app.post("/add-Admin",(request,response) => {
     console.log("Hi");
     let object = {
         fname: request.body.fname,
@@ -40,7 +40,7 @@ app.post("/add-admin",(request,response) => {
 
 //--------------posting contact details---------------//
 
-    app.post("/contactdetails",(request,response) => {
+    app.post("/contactDetails",(request,response) => {
       console.log("Hi");
       console.log(request);
       let object = {
@@ -64,7 +64,7 @@ app.post("/add-admin",(request,response) => {
 
 //--------------Adding  content data--------------------//
 
-    app.post("/addcontentdata",(request,response) => {
+    app.post("/addContentData",(request,response) => {
       console.log("Hi");
       console.log(request.body);
       let object = {
@@ -91,7 +91,7 @@ app.post("/add-admin",(request,response) => {
 
 //--------Getting Id for editing content------// 
 
-      app.get("/editcontent/:id",(request,response) => {
+      app.get("/editContent/:id",(request,response) => {
 
         console.log(request.params.id);
         let object={
@@ -111,7 +111,7 @@ app.post("/add-admin",(request,response) => {
 
 //-------Getting content data---------//
 
-      app.get("/getcontent", (request, response) => {
+      app.get("/getContent", (request, response) => {
         console.log(request);
         console.log("get called");
         let data={
@@ -131,7 +131,7 @@ app.post("/add-admin",(request,response) => {
       });
       
 //---------Getting Contact data----------//
-      app.get("/getcontact", (request, response) => {
+      app.get("/getContact", (request, response) => {
         console.log(request);
         console.log("get called");
         let data={
@@ -151,7 +151,7 @@ app.post("/add-admin",(request,response) => {
       });
 
 //------------Deleting content data--------//
-      app.delete("/deletecontenttopicmessage/:id/:id1", (request, response) => {
+      app.delete("/deleteContentTopicMessage/:id/:id1", (request, response) => {
         dbconnection.del_id(request.params.id, request.params.id1, "ad-tracker")
           .then((res) => {
             if (res) {
@@ -164,7 +164,7 @@ app.post("/add-admin",(request,response) => {
 
 //----------------Deleting Contact data-------------------//      
 
-      app.delete("/deletecontact/:id/:id1", (request, response) => {
+      app.delete("/deleteContact/:id/:id1", (request, response) => {
         dbconnection.del_id(request.params.id, request.params.id1, "ad-tracker")
           .then((res) => {
             if (res) {
@@ -199,7 +199,7 @@ app.post("/add-admin",(request,response) => {
 
     //-----------updating content data------------//
 
-    app.put('/update_query', (request, response) => {
+    app.put('/updateData', (request, response) => {
       console.log('hey');
       console.log(request.body);
       let object = {
@@ -211,7 +211,7 @@ app.post("/add-admin",(request,response) => {
         _rev:request.body._rev,
         type: 'addcontentdata'
       };  
-      dbconnection.updatedata(object, 'ad-tracker').then((res) => {
+      dbconnection.updateData(object, 'ad-tracker').then((res) => {
         if (res) {
           console.log('updated....');
           response.send(res);

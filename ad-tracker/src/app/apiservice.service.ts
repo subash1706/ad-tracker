@@ -14,44 +14,44 @@ export class ApiserviceService {
   like2=0;
   like3=0;  
   constructor(private http: HttpClient) { }
-  addadmindata(formObject:any){
-    return this.http.post<any>('http://localhost:8000/add-admin',formObject);
+  addAdminData(formObject:any){
+    return this.http.post<any>('http://localhost:8000/add-Admin',formObject);
   }
   
   loginForm(){
     return this.http.get('http://localhost:8000/loginForm');
   }
-  contactdetails(formObject:any){
+  contactDetails(formObject:any){
     console.log(formObject);
-    return this.http.post<any>('http://localhost:8000/contactdetails',formObject);
+    return this.http.post<any>('http://localhost:8000/contactDetails',formObject);
   }
 
-  addcontentdata(formObject:any){
-    return this.http.post('http://localhost:8000/addcontentdata',formObject);
+  addContentData(formObject:any){
+    return this.http.post('http://localhost:8000/addContentData',formObject);
   }
   getUser(){
-    return this.http.get('http://localhost:8000/getcontent');
+    return this.http.get('http://localhost:8000/getContent');
   }
-  getcontact(){
-    return this.http.get('http://localhost:8000/getcontact');
+  getContact(){
+    return this.http.get('http://localhost:8000/getContact');
   }
-  editcontent(id2:any){
+  editContent(id2:any){
     console.log("hello",id2)
-    return this.http.get(`http://localhost:8000/editcontent/${id2}`);
+    return this.http.get(`http://localhost:8000/editContent/${id2}`);
   }
-  updatedata(doc:any){
+  updateData(doc:any){
     console.log(doc);
-    return this.http.put('http://localhost:8000/update_query/',doc);
+    return this.http.put('http://localhost:8000/updateData/',doc);
   }
 
 
-  deletecontenttopicmessage(id:any,id1:any){
-    return this.http.delete(`http://localhost:8000/deletecontenttopicmessage/${id}/${id1}`);
+  deleteContentTopicMessage(id:any,id1:any){
+    return this.http.delete(`http://localhost:8000/deleteContentTopicMessage/${id}/${id1}`);
 
   }
   
-  deletecontact(id:any,id1:any){
-    return this.http.delete(`http://localhost:8000/deletecontenttopicmessage/${id}/${id1}`);
+  deleteContact(id:any,id1:any){
+    return this.http.delete(`http://localhost:8000/deleteContentTopicMessage/${id}/${id1}`);
 
   }
 

@@ -9,8 +9,8 @@
             <div class="project-item" *ngFor="let obj of object">
                 <div class="project-info" >
                   <h2><a style="color: wheat;">{{obj.Topic}}</a></h2>
-                  <h3 class="icon">👁‍🗨{{obj.view}}</h3>
-                  <h2 class="icon" (click)="like(obj)" >👍🏼{{obj.like}}</h2>
+                  <a class="icon">👁‍🗨{{obj.view}}</a>
+                  <a class="icon" (click)="like(obj)" >👍🏼{{obj.like}}</a>
                 </div>
                 <div class="project-info" >
                   <div><button class="glow-on-hover" (click)="count(obj)" (click)="previousWeekData()">Learn more</button></div>
