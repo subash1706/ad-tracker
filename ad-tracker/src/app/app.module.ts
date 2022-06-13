@@ -5,7 +5,6 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FeaturesComponent } from './features/features.component';
-import { AboutComponent } from './about/about.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { AdtrackingComponent } from './adtracking/adtracking.component';
@@ -13,7 +12,6 @@ import { PpctrackingComponent } from './ppctracking/ppctracking.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { PixeltrackingComponent } from './pixeltracking/pixeltracking.component';
 import { PostbacktrackingComponent } from './postbacktracking/postbacktracking.component';
-import { SignupComponent } from './signup/signup.component';
 import{HttpClientModule} from '@angular/common/http';
 import { LoginformComponent } from './loginform/loginform.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -31,7 +29,6 @@ import { NavaddComponent } from './navadd/navadd.component';
   declarations: [
     AppComponent,
     FeaturesComponent,
-    AboutComponent,
     MainMenuComponent,
     NavigationComponent,
     AdtrackingComponent,
@@ -39,7 +36,6 @@ import { NavaddComponent } from './navadd/navadd.component';
     ContactFormComponent,
     PixeltrackingComponent,
     PostbacktrackingComponent,
-    SignupComponent,
     LoginformComponent,
     DashboardComponent,
     AddComponent,
