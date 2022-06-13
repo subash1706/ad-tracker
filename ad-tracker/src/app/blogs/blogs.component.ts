@@ -101,4 +101,8 @@ export class BlogsComponent implements OnInit {
       this.api.like3++;
       console.log(this.api.like3);
     }
+    previousData(){
+      console.log("Previous Button Clicked");
+      this.isShow = !this.isShow; 
+    }
 }

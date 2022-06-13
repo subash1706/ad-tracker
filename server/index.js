@@ -199,7 +199,7 @@ app.post("/add-Admin",(request,response) => {
 
     //-----------updating content data------------//
 
-    app.put('/updateData', (request, response) => {
+    app.put('/update_query', (request, response) => {
       console.log('hey');
       console.log(request.body);
       let object = {
@@ -211,7 +211,7 @@ app.post("/add-Admin",(request,response) => {
         _rev:request.body._rev,
         type: 'addcontentdata'
       };  
-      dbconnection.updateData(object, 'ad-tracker').then((res) => {
+      dbconnection.updatedata(object, 'ad-tracker').then((res) => {
         if (res) {
           console.log('updated....');
           response.send(res);
