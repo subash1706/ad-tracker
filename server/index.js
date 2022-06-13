@@ -143,7 +143,7 @@ app.use(
         dbconnection.get(data,"ad-tracker").then((response) => {
           if (response) {
             console.log("process success")
-            response.send(response);
+            _response.send(response);
             
           } else {
             console.log("process failed")
