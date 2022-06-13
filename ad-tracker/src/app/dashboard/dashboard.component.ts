@@ -111,17 +111,7 @@ export class DashboardComponent implements OnInit {
       this.toastr.success("Done","Content deleted successfully");
       setInterval(()=>{
       location.reload()
-      },1000);
-    },rej =>{
-      this.toastr.error("Error","Content cannot be deleted" +rej);
-    })
-  }
-  deletecontact(data:any,data1:any){
-    this.api.deleteContact(data._id,data1._rev).subscribe(_response => {
-      this.toastr.success("Done","Content deleted successfully");
-      setInterval(()=>{
-        location.reload()
-        },1000);
+      },100);
     },rej =>{
       this.toastr.error("Error","Content cannot be deleted" +rej);
     })

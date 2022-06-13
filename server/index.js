@@ -134,16 +134,16 @@ app.use(
 
 //--------------Getting Login form data-----//
 
-      app.get("/loginForm", (_request, response) => {
+      app.get("/loginForm", (_request, _response) => {
         let data={
           selector:{
             type:"signupData",
           },
         };
-        dbconnection.get(data,"ad-tracker").then((res) => {
-          if (res) {
+        dbconnection.get(data,"ad-tracker").then((response) => {
+          if (response) {
             console.log("process success")
-            response.send(res);
+            response.send(response);
             
           } else {
             console.log("process failed")
