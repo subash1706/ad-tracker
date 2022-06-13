@@ -21,26 +21,21 @@ export class BlogsComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    console.log();
     this.object=[];
     this.get();
   }
   get(){
     this.api.getUser().subscribe(data=>{
-      console.log(data);
       console.log('Data was fetching');
       this.alldata=data;
       this.alldata=this.alldata.docs;
-      console.log(this.alldata);
       for(const i of this.alldata){
             this.object.push(i);
-            console.log(i);
             console.log('Fetched successfuly in add component')
       }
     });
   }
     count(view:any){
-      console.log(view._id);
       this.viewPost={
         Topic: view.Topic,
         like: view.like,
@@ -49,17 +44,14 @@ export class BlogsComponent implements OnInit {
         _id: view._id,
         _rev: view._rev
       }
-      console.log(this.viewPost);
       this.api.updateData(this.viewPost).subscribe(res=>{
         console.log("count increase ",res);
         this.object=[];
         this.get();
       })
       this.api.count++;
-      console.log(this.api.count);
     }
     like(like:any){
-      console.log(like._id);
       this.viewPost={
         Topic: like.Topic,
         like: like.like+1,
@@ -68,41 +60,32 @@ export class BlogsComponent implements OnInit {
         _id: like._id,
         _rev: like._rev
       }
-      console.log(this.viewPost);
-      this.api.updateData(this.viewPost).subscribe(response=>{
-        console.log("count increase ",response);
+      this.api.updateData(this.viewPost).subscribe(_response=>{
         this.object=[];
         this.get();
       })
     }
     count1(){
       this.api.count1++;
-      console.log(this.api.count1);
     }
     count2(){
       this.api.count2++;
-      console.log(this.api.count2);
     }
     count3(){
       this.api.count3++;
-      console.log(this.api.count3);
     }
 
     
     like1(){
       this.api.like1++;
-      console.log(this.api.like1);
     }
     like2(){
       this.api.like2++;
-      console.log(this.api.like2);
     }
     like3(){
       this.api.like3++;
-      console.log(this.api.like3);
     }
     previousData(){
-      console.log("Previous Button Clicked");
       this.isShow = !this.isShow; 
     }
 }

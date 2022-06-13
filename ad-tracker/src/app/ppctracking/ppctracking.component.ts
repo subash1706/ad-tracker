@@ -12,7 +12,7 @@ export class PpctrackingComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    console.log();
+     //ppc tracking//
   }
 
 }

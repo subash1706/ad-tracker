@@ -43,32 +43,26 @@ export class DashboardComponent implements OnInit {
     })
     this.get();
         this.api.getContact().subscribe(data=>{
-      console.log(data);
       console.log('Data was fetching');
       this.contactdata=data;
       this.contactdata=this.contactdata.docs;
-      console.log(this.contactdata);
       for(const obj of this.contactdata){
             this.contact.push(obj);
             console.log('Fetched successfuly in add component')
       }
-      console.log(this.object);
     });
   
   }
 
   get(){
     this.api.getUser().subscribe(data=>{
-      console.log(data);
       console.log('Data was fetching');
       this.alldata=data;
       this.alldata=this.alldata.docs;
-      console.log(this.alldata);
       for(const obj of this.alldata){
             this.object.push(obj);
             console.log('Fetched successfuly in add component')
       }
-      console.log(this.object);
     });
 
   }
@@ -79,7 +73,6 @@ export class DashboardComponent implements OnInit {
     this.api.editContent(data2)
     .subscribe(response => {
       this.editdata=response;
-      console.log(this.editdata);
       this.EditGroup.controls['Topic'].setValue(this.editdata.Topic);
       this.EditGroup.controls['message'].setValue(this.editdata.message);
       this.EditGroup.controls['id'].setValue(this.editdata._id);
@@ -93,7 +86,6 @@ export class DashboardComponent implements OnInit {
 
 
   update(FormValue:any){
-    console.log(FormValue);
     this.createObj={
       Topic:FormValue.Topic,
       _id:FormValue.id,
@@ -103,7 +95,6 @@ export class DashboardComponent implements OnInit {
       view:FormValue.view
     }
     this.api.updateData(this.createObj).subscribe(res=>{
-      console.log(res);
       console.log("Your data was updated successfully!");
       this.object=[];
       this.get();
@@ -111,20 +102,28 @@ export class DashboardComponent implements OnInit {
     },rej=>{
       console.log("can not update....."+rej);
     })
-    // location.reload()
+    
   }
 
 
   deletecontent(data:any,data1:any){
     this.api.deleteContentTopicMessage(data._id,data1._rev).subscribe(_res=>{
       this.toastr.success("Done","Content deleted successfully");
+      setInterval(()=>{
       location.reload()
+      },1000);
+    },rej =>{
+      this.toastr.error("Error","Content cannot be deleted" +rej);
     })
   }
   deletecontact(data:any,data1:any){
-    this.api.deleteContact(data._id,data1._rev).subscribe(_res=>{
+    this.api.deleteContact(data._id,data1._rev).subscribe(_response=>{
       this.toastr.success("Done","Content deleted successfully");
-      location.reload()
+      setInterval(()=>{
+        location.reload()
+        },1000);
+    },rej =>{
+      this.toastr.error("Error","Content cannot be deleted" +rej);
     })
   }
 }

@@ -12,7 +12,7 @@ export class AdtrackingComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    console.log();
+ //adtracking//
   }
 
 }

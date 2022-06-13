@@ -12,7 +12,7 @@ export class PostbacktrackingComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    console.log();
+    //post back//
   }
 
 }

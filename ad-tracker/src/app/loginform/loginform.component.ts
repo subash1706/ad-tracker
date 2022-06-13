@@ -25,11 +25,9 @@ export class LoginformComponent implements OnInit {
 
   ngOnInit(): void {  
     this.api.loginForm().subscribe(data=>{
-      console.log(data);
       console.log('Data was fetching');
       this.alldata=data;
       this.alldata=this.alldata.docs;
-      console.log(this.alldata);
       for(const i of this.alldata){
             this.object.push(i);
             console.log('Fetched successfuly');

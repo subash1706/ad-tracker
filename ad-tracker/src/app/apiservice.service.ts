@@ -22,7 +22,6 @@ export class ApiserviceService {
     return this.http.get('http://localhost:8000/loginForm');
   }
   contactDetails(formObject:any){
-    console.log(formObject);
     return this.http.post<any>('http://localhost:8000/contactDetails',formObject);
   }
 
@@ -36,26 +35,16 @@ export class ApiserviceService {
     return this.http.get('http://localhost:8000/getContact');
   }
   editContent(id2:any){
-    console.log("hello",id2)
     return this.http.get(`http://localhost:8000/editContent/${id2}`);
   }
   updateData(doc:any){
-    console.log(doc);
     return this.http.put('http://localhost:8000/update_query/',doc);
   }
-
-
   deleteContentTopicMessage(id:any,id1:any){
     return this.http.delete(`http://localhost:8000/deleteContentTopicMessage/${id}/${id1}`);
-
-  }
-  
+  }  
   deleteContact(id:any,id1:any){
     return this.http.delete(`http://localhost:8000/deleteContentTopicMessage/${id}/${id1}`);
-
   }
-
-
-
 }
 

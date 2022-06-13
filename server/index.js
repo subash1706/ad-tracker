@@ -16,7 +16,6 @@ app.use(
 //--------Adding New Admin------//
 
 app.post("/add-Admin",(request,response) => {
-    console.log("Hi");
     let object = {
         fname: request.body.fname,
         lname: request.body.lname,
@@ -41,15 +40,13 @@ app.post("/add-Admin",(request,response) => {
 //--------------posting contact details---------------//
 
     app.post("/contactDetails",(request,response) => {
-      console.log("Hi");
-      console.log(request);
       let object = {
           fname:request.body.fname,
           contactnumber:request.body.contactnumber,
           email: request.body.email,
           message: request.body.message,
           type:'Contactdata'
-      };console.log(object);
+      };
       dbconnection.insert(object).then(
           (res) => {
             console.log("Contact data posted");
@@ -65,8 +62,6 @@ app.post("/add-Admin",(request,response) => {
 //--------------Adding  content data--------------------//
 
     app.post("/addContentData",(request,response) => {
-      console.log("Hi");
-      console.log(request.body);
       let object = {
         Topic: request.body.Topic,
         message: request.body.message,
@@ -92,28 +87,22 @@ app.post("/add-Admin",(request,response) => {
 //--------Getting Id for editing content------// 
 
       app.get("/editContent/:id",(request,response) => {
-
-        console.log(request.params.id);
         let object={
           selector:{
             id: request.params.id,
             type:"addcontentdata"
-          }
-          
+          }          
         };
         dbconnection.edit(request.params.id,"ad-tracker").then(
             (res) => {
               response.send(res);
-              console.log(object);
             }
           )
       });
 
 //-------Getting content data---------//
 
-      app.get("/getContent", (request, response) => {
-        console.log(request);
-        console.log("get called");
+      app.get("/getContent", (_request, response) => {
         let data={
           selector:{
             type:"addcontentdata",
@@ -131,9 +120,7 @@ app.post("/add-Admin",(request,response) => {
       });
       
 //---------Getting Contact data----------//
-      app.get("/getContact", (request, response) => {
-        console.log(request);
-        console.log("get called");
+      app.get("/getContact", (_request, response) => {
         let data={
           selector:{
             type:"Contactdata",
@@ -177,16 +164,13 @@ app.post("/add-Admin",(request,response) => {
 
 //--------------Getting Login form data-----//
 
-      app.get("/loginForm", (request, response) => {
-        console.log(request);
-        console.log("get called");
+      app.get("/loginForm", (_request, response) => {
         let data={
           selector:{
             type:"signupData",
           },
         };
         dbconnection.get(data,"ad-tracker").then((res) => {
-          console.log();
           if (res) {
             console.log("process success")
             response.send(res);
@@ -200,8 +184,6 @@ app.post("/add-Admin",(request,response) => {
     //-----------updating content data------------//
 
     app.put('/update_query', (request, response) => {
-      console.log('hey');
-      console.log(request.body);
       let object = {
         Topic: request.body.Topic,
         message: request.body.message,
@@ -243,7 +225,6 @@ app.post("/add-Admin",(request,response) => {
         Message:request.body.Message
       }
       setmail.getemail(request.body.email);
-      console.log(object);
     })
 //-----------sending Email to admin--------//
 
@@ -255,7 +236,6 @@ app.post("/add-Admin",(request,response) => {
         Message:request.body.Message
       }
       setmail.getmail(request.body.Message);
-      console.log(object);
     })
     
 

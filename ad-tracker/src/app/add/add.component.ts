@@ -36,7 +36,6 @@ export class AddComponent implements OnInit {
       message:FormValue.message,
       view:0
     }
-    console.log(this.formObj);
     this.api.addContentData(this.formObj).subscribe((_data)=>{
       this.toastr.success("success","Content added Successfully")
       this.AddGroup.reset();
@@ -44,7 +43,6 @@ export class AddComponent implements OnInit {
       console.log("Error" + rej);
       this.toastr.error("Failed","Content cannot be added Successfully")
     });
-    console.log(this.formObj);
   }
   
 

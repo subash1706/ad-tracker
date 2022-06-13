@@ -13,7 +13,7 @@ export class PixeltrackingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log();
+   //pixeltravking//
   }
 
 }

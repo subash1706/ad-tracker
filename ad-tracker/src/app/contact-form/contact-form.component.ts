@@ -27,17 +27,12 @@ export class ContactFormComponent implements OnInit {
     
   }
   sendemail(Formvalue:NgForm){
-    console.log("Hello");
-    console.log(Formvalue);
     this.contact.sendemail(Formvalue).subscribe((data:any)=>{
-      console.log(data);
+      this.toastr.success('Success','Email sent successfully')
     })
     }
   sendmail(Formvalue:NgForm){
-    console.log("Hii");
-    console.log(Formvalue);
     this.contact.sendmail(Formvalue).subscribe((data:any)=>{
-      console.log(data);
     })
     }
     reloadCurrentPage() {
@@ -48,13 +43,10 @@ export class ContactFormComponent implements OnInit {
      }
 
      contactdetails(Formvalue:NgForm){
-      console.log(Formvalue);
        this.api.contactDetails(Formvalue).subscribe((data)=>{
-         console.log(data);
          this.toastr.success('Success',"Contact Details Added ");
        },rej=>{
-        this.toastr.error('Error',"Contact Details NotAdded ");
-       console.log("Error"+rej);
+        this.toastr.error('Error',"Contact Details NotAdded "+rej);
        });
        
        }
