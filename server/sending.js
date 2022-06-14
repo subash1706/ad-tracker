@@ -12,7 +12,7 @@ let composemail = {
     from:'adtracker6@gmail.com',
     to:params,
     subject:'Welcome to Track Spot',
-    text:'Thank you for contacting us!'
+    text:'Thank you for contacting us! For further information contact us at --- adtracker6@gmail.com'
     
 }
 sender.sendMail(composemail,function(err,res){
