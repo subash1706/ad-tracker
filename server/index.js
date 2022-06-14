@@ -59,15 +59,13 @@ app.use(
 
       app.get("/editContent/:id",(request,response) => {
         if(request.params.id==undefined){
-          response.send("id is undefined");
+          response.send("Id is undefined");
         }else{
           dbconnection.edit(request.params.id,"ad-tracker").then(
             (res) => {
               response.send(res);
             }
-          ).catch(rej=>{
-            response.send(rej);
-          })
+          )
         }
         
       });
