@@ -7,7 +7,6 @@ const setmail = require('./sending');
 const connection = require('./gettime');
 const cors =  require('cors');
 const dbconnection  =  require("./database");
-const { request, response } = require('express');
 app.use(bodypraser.json());
 app.use(
     cors({
