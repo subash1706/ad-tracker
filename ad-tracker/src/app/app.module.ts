@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { FeaturesComponent } from './features/features.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { AdtrackingComponent } from './adtracking/adtracking.component';
 import { PpctrackingComponent } from './ppctracking/ppctracking.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { PixeltrackingComponent } from './pixeltracking/pixeltracking.component';
@@ -22,7 +21,6 @@ import { CommonModule } from '@angular/common';
 import { BlogsComponent } from './blogs/blogs.component';
 import { NavlogoutComponent } from './navlogout/navlogout.component';
 import { NavaddComponent } from './navadd/navadd.component';
-import { TimeanddateComponent } from './timeanddate/timeanddate.component';
 
 
 
@@ -32,7 +30,6 @@ import { TimeanddateComponent } from './timeanddate/timeanddate.component';
     FeaturesComponent,
     MainMenuComponent,
     NavigationComponent,
-    AdtrackingComponent,
     PpctrackingComponent,
     ContactFormComponent,
     PixeltrackingComponent,
@@ -42,8 +39,7 @@ import { TimeanddateComponent } from './timeanddate/timeanddate.component';
     AddComponent,
     BlogsComponent,
     NavlogoutComponent,
-    NavaddComponent,
-    TimeanddateComponent
+    NavaddComponent
   ],
   imports: [
     BrowserModule,
