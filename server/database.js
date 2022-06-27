@@ -27,14 +27,4 @@ let del_id = function (id, id1, dbname) {
 let updatedata = function(data,dbname){
   return cloudant.use(dbname).insert(data);
 }
-// let time = function (data,dbname) {
-//   let today = new Date();
-//   let hours = (today.getHours() < 10 ? '0' : '') + today.getHours();
-//   let minutes = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
-//   let seconds = (today.getSeconds() < 10 ? '0' : '') + today.getSeconds();
-//   let date = (today.getDate() < 10 ? '0' : '')+ today.getDate();
-//   let month = (today.getMonth()< 12 ? '0' : '') + today.getMonth();
-//   let year = (today.getFullYear()< 10 ? '0' : '') + today.getFullYear();
-//   return cloudant.use(dbname).insert (hours + ':' + minutes + ':' + seconds + '(' + date + '-' + month + '-' + year + ')');
-// }
 module.exports = {insert, get, del_id,edit,updatedata };
