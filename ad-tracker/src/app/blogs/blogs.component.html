@@ -9,12 +9,12 @@
             <div class="project-item" *ngFor="let obj of object">
                 <div class="project-info" >
                   <h2><a style="color: wheat;">{{obj.Topic}}</a></h2>
-                  <a class="icon">👁‍🗨{{obj.view}}</a>
+                  <a class="icon">👁‍🗨{{obj.view}}</a><a class="icon1">last viewed :{{this.time}}</a>
                   <a class="icon" (click)="like(obj)" >👍🏼{{obj.like}}</a>
                 </div>
                 <div class="project-info" >
-                  <div><button class="glow-on-hover" (click)="count(obj)" (click)="previousData()">Learn more</button></div>
-                  <h4 class="text-light" *ngIf = "isShow">{{obj.message}}</h4>
+                  <div><button class="glow-on-hover" (click)="count(obj)" (click)="previousData()" (click)="timedate()">Learn more</button></div>
+                  <h4 class="text-light" *ngIf = "isShow" >{{obj.message}}<button (click)="closedata">close</button></h4>
                 </div>
               </div>
           </div>   

@@ -27,6 +27,15 @@ export class ApiserviceService {
   getUser(){
     return this.http.get('http://localhost:8000/getContent');
   }
+  //
+  //
+  // getTime(){
+  //   return this.http.get('http://localhost:8000/getTime');
+  // }
+  
+
+  //
+  //
   getContact(){
     return this.http.get('http://localhost:8000/getContact');
   }

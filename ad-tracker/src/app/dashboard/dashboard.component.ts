@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,NgModule } from '@angular/core';
 import {FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiserviceService } from '../apiservice.service';
 import{ToastrService} from 'ngx-toastr';
+import { DatePipe } from '@angular/common';
+import { BlogsComponent } from '../blogs/blogs.component';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
+  providers:[BlogsComponent,DatePipe]
 })
 export class DashboardComponent implements OnInit {
   countdisplay = this.api.count;
@@ -26,8 +29,10 @@ export class DashboardComponent implements OnInit {
   contactdata:any=[];
   replyGroup!:FormGroup;
   createObj:any;  
+  time:any;
+  alltime:any;
 
-  constructor(public api:ApiserviceService, private fb:FormBuilder,private toastr:ToastrService) { }
+  constructor(public api:ApiserviceService, private fb:FormBuilder,private toastr:ToastrService, public dateTime:BlogsComponent) { }
 
   ngOnInit(): void {
     this.EditGroup = this.fb.group({
@@ -36,8 +41,10 @@ export class DashboardComponent implements OnInit {
       id:['',Validators.required],
       rev:['',Validators.required],
       view:[''],
-      like:[]
+      like:[],
+      lastview:[],
     })
+  console.log(this.dateTime.time);
     this.get();
         this.api.getContact().subscribe(data=>{
       this.contactdata=data;
@@ -56,6 +63,17 @@ export class DashboardComponent implements OnInit {
       }
     });
   }
+  // getTime(){
+  //   this.api.getTime().subscribe(data=>{
+  //     console.log('hi');
+  //     this.alltime=data;
+  //     this.alltime=this.alltime.docs;
+  //     for(const obj1 of this.alltime){
+  //           this.object.push(obj1);
+  //     }
+  //   });
+  // }
+  
 
   editcontent(data2:any,data3:any){
     this.id=data2;
@@ -69,8 +87,15 @@ export class DashboardComponent implements OnInit {
       this.EditGroup.controls['rev'].setValue(this.editdata._rev);
       this.EditGroup.controls['view'].setValue(this.editdata.view);
       this.EditGroup.controls['like'].setValue(this.editdata.like);
+      this.EditGroup.controls['lastview'].setValue(this.editdata.lastview);
     });
   }
+  // timedate(){
+  //   let currentDateTime =this.Datetime.transform((new Date), 'MM/dd/yyyy h:mm:ss');
+  //   this.time = currentDateTime;
+  //   console.log(this.time);
+  // }
+
 
 
   update(FormValue:any){
@@ -78,6 +103,7 @@ export class DashboardComponent implements OnInit {
       Topic:FormValue.Topic,
       _id:FormValue.id,
       like:FormValue.like,
+      lastviewed:FormValue.lastview,
       message:FormValue.message,
       _rev:FormValue.rev,
       view:FormValue.view
@@ -102,5 +128,7 @@ export class DashboardComponent implements OnInit {
       this.toastr.error("Error","Content cannot be deleted" +rej);
     })
   }
+  
+  
 }
 

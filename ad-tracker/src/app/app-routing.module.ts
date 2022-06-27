@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddComponent } from './add/add.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { BlogsComponent } from './blogs/blogs.component';
+import { TimeanddateComponent } from './timeanddate/timeanddate.component';
 const routes: Routes = [
   {path:'',component:MainMenuComponent},
   {path:'features',component:FeaturesComponent},
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path:'dashboard',component:DashboardComponent},
   {path:'add',component:AddComponent},
   {path:'navigation',component:NavigationComponent},
-  {path:'blogs', component:BlogsComponent}
+  {path:'blogs', component:BlogsComponent},
+  {path:'timeanddate',component:TimeanddateComponent}
 ]
 
 @NgModule({

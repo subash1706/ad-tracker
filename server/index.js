@@ -4,8 +4,10 @@ const app = express();
 app.disable("x-powered-by");
 const port = 8000;
 const setmail = require('./sending');
+const connection = require('./gettime');
 const cors =  require('cors');
 const dbconnection  =  require("./database");
+const { request, response } = require('express');
 app.use(bodypraser.json());
 app.use(
     cors({
@@ -180,8 +182,4 @@ app.use(
 
     app.post('/mail',(request) =>{
       setmail.getmail(request.body.Message);
-    })
-    
-
-
-
+    })    

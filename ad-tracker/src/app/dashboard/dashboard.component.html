@@ -21,6 +21,7 @@
               <td><h1>{{obj.Topic}}</h1></td>
               <td><h3>{{obj.message}}</h3></td>
               <td style="text-align: center;"><h3>{{obj.view}}</h3></td>
+              <td>{{this.dateTime.time}}</td>
               <td style="text-align: center;"><h3>{{obj.like}}</h3></td>
               <td><button (click)="editcontent(obj._id,obj._rev)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><h3>Edit</h3></button></td>
               <td><button (click)="deletecontent(obj,obj)" class="btn btn-danger"><h3>Delete</h3></button></td>
@@ -76,5 +77,6 @@
           </div>
         </div>
       </div>
-    </div>
+    
+
     

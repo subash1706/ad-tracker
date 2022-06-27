@@ -67,6 +67,15 @@
   cursor: pointer;
   font-size: 22px;
 }
+.icon1{
+  margin-top: 5%;
+  cursor: pointer;
+  font-size: 18px;
+}
+.closeddata
+{
+  display: none;
+}
 /* //----------------// */
 .limitTextHeight {
   height: 20px;

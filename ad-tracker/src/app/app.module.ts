@@ -22,6 +22,7 @@ import { CommonModule } from '@angular/common';
 import { BlogsComponent } from './blogs/blogs.component';
 import { NavlogoutComponent } from './navlogout/navlogout.component';
 import { NavaddComponent } from './navadd/navadd.component';
+import { TimeanddateComponent } from './timeanddate/timeanddate.component';
 
 
 
@@ -41,7 +42,8 @@ import { NavaddComponent } from './navadd/navadd.component';
     AddComponent,
     BlogsComponent,
     NavlogoutComponent,
-    NavaddComponent
+    NavaddComponent,
+    TimeanddateComponent
   ],
   imports: [
     BrowserModule,

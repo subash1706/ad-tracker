@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiserviceService } from '../apiservice.service';
 import { FormGroup} from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-blogs',
   templateUrl: './blogs.component.html',
-  styleUrls: ['./blogs.component.css']
+  styleUrls: ['./blogs.component.css'],
+  providers: [DatePipe]
 })
 export class BlogsComponent implements OnInit {
   AddGroup!:FormGroup;
@@ -14,10 +16,13 @@ export class BlogsComponent implements OnInit {
   adduser!:FormGroup;
   alldata:any;
   isShow: any;
+  isclose:any;
   viewPost:any;
   likePost:any;
+  time: any;
+  viewtrack:any;
   
-  constructor(public api:ApiserviceService) { 
+  constructor(public api:ApiserviceService, public dateTime:DatePipe) { 
 
   }
   ngOnInit(): void {
@@ -40,7 +45,8 @@ export class BlogsComponent implements OnInit {
         message: view.message,
         view: view.view+1,
         _id: view._id,
-        _rev: view._rev
+        _rev: view._rev,
+        lastview: view.lastview
       }
       this.api.updateData(this.viewPost).subscribe(_res=>{
         this.object=[];
@@ -62,7 +68,28 @@ export class BlogsComponent implements OnInit {
         this.get();
       })
     }
+    timedate(){
+ 
+      let currentDateTime =this.dateTime.transform((new Date), 'MM/dd/yyyy h:mm:ss');
+      this.time = currentDateTime;
+      console.log(this.time);
+    }
+    timeupdate(lastview:any){
+      this.viewtrack={
+        Topic: lastview.Topic,
+        like: lastview.like+1,
+        message: lastview.message,
+        view: lastview.view,
+        _id: lastview._id,
+        _rev: lastview._rev,
+        lastview:lastview.time = this.time
+      }
+    }
+   
     previousData(){
       this.isShow = !this.isShow; 
+    }
+    closedata(){
+      this.isclose = !this.isclose;
     }
 }
